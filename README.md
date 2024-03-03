@@ -1,23 +1,25 @@
 # TÍTULO DO PROJETO
 
-`CURSO`
+`Sistemas para Internet`
 
-`DISCIPLINA`
+`Eixo 3 - Projeto: Desenvolvimento Web Back-End - Turma 01 - 2024/1`
 
-`SEMESTRE`
+`TERCEIRO SEMESTRE`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+Este grupo esta desenvolvendo um aplicativo denominado `Shape App`. Este aplicativo ofereçe uma lista de exercícios gerada de acordo com os objetivos do usuário, sejam eles,  perder peso, ganhar massa ou melhorar o condicionamento físico, de forma inteligente e adaptável ao seu desempenho.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Alicia Ribeiro Andrade da Silva
+* Danilo Henrique Pupin de Carvalho
+* Elisabete Romana dos Santos de Paula
+* Isabella Cristina da Silva Prado
+* Murilo Silva Rezende
+* Rafaela Rodrigues Santana
 
 ## Orientador
 
-* Nome completo do professor 1
+* Will Ricardo dos Santos Machado
 
 ## Instruções de utilização
 
