@@ -8,12 +8,99 @@ Definição de como o software é estruturado em termos dos componentes que faze
 
 ## Diagrama de Classes
 
-O diagrama de classes ilustra graficamente como será a estrutura do software, e como cada uma das classes da sua estrutura estarão interligadas. Essas classes servem de modelo para materializar os objetos que executarão na memória.
+```mermaid
+classDiagram
+   
+  Pessoa "1" o-- "1"Login
+  Pessoa "1" *-- "1..*" Perfil
+  Perfil "1" *-- "1" Treino
+  Perfil "1" *-- "1..*" Recomendacao
+  Recomendacao "1" o-- "1..*" Exercicio
+  Treino "1" *-- "1..*" ItemTreino
+  ItemTreino "1" o-- "1" Exercicio
 
-As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de Classes”.
+  class Pessoa{
+    -string nome
+    -DateTime dataNascimento
+    -Login login
+    -List~Perfil~ perfis
+    +getNome() string
+    +setNome(string nome) 
+    +getDataNascimento() DateTime
+    +setDataNascimento(DateTime dataNascimento) 
+    +addPerfil(Perfil perfil) 
+    +getLogin() Login
+    +setLogin(Login login)
+    +getPerfis() List~Perfil~ 
+  }
 
-> - [Diagramas de Classes - Documentação da IBM](https://www.ibm.com/docs/pt-br/rational-soft-arch/9.6.1?topic=diagrams-class)
-> - [O que é um diagrama de classe UML? | Lucidchart](https://www.lucidchart.com/pages/pt/o-que-e-diagrama-de-classe-uml)
+  class Login{
+    -string usuario
+    -string senha
+    +getUsuario() string
+    +setUsuario(string usuario) 
+    +getSenha() string
+    +setSenha(string senha)
+    -validaSenha() 
+  }
+
+  class Perfil{
+    -DateTime dataPerfil
+    -double idade
+    -double altura
+    -double peso 
+    -string nivel 
+    -double imc
+    -Treino treino
+    -List~Recomendacao~ recomendacoes
+    +Perfil(DateTime dataNascimento, double altura, double peso, string nivel)
+    -calcularImc()
+    +getPeso() double
+    +getAltura() double
+    +getImc() double
+    +getDataPerfil() DateTime
+    +getIdade() int
+    +getNivel() string
+    +getTreino() Treino
+    +setTreino(Treino treino)
+    +addRecomendacao(Recomendacao recomendacao)
+    +getRecomendacoes() List~Recomendacao~ 
+  }
+
+  class Treino{
+    -List~ItemTreino~itens
+    +addItemTreino(item)
+    +getItens() ItemTreino
+
+  }
+
+  class Recomendacao{
+    -List~Exercicio~ exercicios
+    +addExercicio(exercicio)
+    +getExercicios() List~Exercicio~
+  }
+
+  class Exercicio{
+    -string descricao
+    -string grupoMuscular
+    +getDescricao() string
+    +getGrupoMuscular() string
+    +setDescricao(string descricao)
+    +setGrupoMuscular(string grupoMuscular)
+  }
+  
+  class ItemTreino{
+    -int repeticoes 
+    -int series
+    -Exercicio exercicio
+    +getRepeticoes() int
+    +setRepeticoes(int repeticoes)
+    +getSeries() int
+    +setSeries(int series) 
+    +getExercicio() Exercicio
+    +setExercicio(Exercicio exercicio) 
+  }
+```
 
 ## Modelo ER
 
