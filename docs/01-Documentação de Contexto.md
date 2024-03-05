@@ -9,7 +9,7 @@ A boa notícia é que, graças à tecnologia, hoje podemos contar com soluções
 Objetivo
 Desenvolver um aplicativo que ofereça uma lista de exercícios de acordo com os objetivos do usuário, sejam eles,  perder peso, ganhar massa ou melhorar o condicionamento físico, de forma inteligente e adaptável ao  seu desempenho.
 Objetivos específicos:
-Através de informações oferecidas pelo usuário, o app construirá uma lista de exercícios apropriada às necessidades deste usuário.
+Através de informações oferecidas pelo usuário, tais como sexo, idade, altura e peso, além da seleção entre tres modalidades de exercício (ganho de massa, perda de peso e mantenimento de forma), o app construirá uma lista de exercícios apropriada às necessidades deste usuário.
 A medida que o usuário for evoluindo com a rotina dos exercícios, o app vai adaptando a lista.
 
 Justificativa:
