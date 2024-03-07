@@ -101,6 +101,7 @@ classDiagram
     +setExercicio(Exercicio exercicio) 
   }
 ```
+Para utilizar o sistema um usuário precisa de credenciais que serão gerenciadas pelo **LOGIN**. Após fazer o login, ele irá completar o cadastro com seu nome e senha, essas informações irão compor a classe **PESSOA**. Para acessar a lista de exercícios, o usuário deverá preencher o seu **PERFIL** com peso, altura e idade, dessa forma o app irá fazer a **RECOMENDAÇÃO** de uma lista de **EXERCÍCIOS** que ele poderá personalizar e obter o **TREINO**. Para alterar o treino é necessário atualizar o perfil.
 
 ## Modelo ER
 
