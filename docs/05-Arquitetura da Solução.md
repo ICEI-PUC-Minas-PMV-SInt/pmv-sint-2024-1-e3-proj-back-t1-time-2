@@ -11,34 +11,34 @@ Definição de como o software é estruturado em termos dos componentes que faze
 ```mermaid
 classDiagram
    
-  Pessoa "1" o-- "1"Login
-  Pessoa "1" *-- "1..*" Perfil
-  Perfil "1" *-- "1" Treino
-  Perfil "1" *-- "1..*" Recomendacao
-  Recomendacao "1" o-- "1..*" Exercicio
-  Treino "1" *-- "1..*" ItemTreino
-  ItemTreino "1" o-- "1" Exercicio
+  Pessoa "1" -- "1" Usuario
+  Pessoa "1" -- "1..*" Perfil
+  Perfil "1" -- "1" Treino
+  Perfil "1" -- "1..*" Recomendacao
+  Recomendacao "1" -- "1..*" Exercicio
+  Treino "1" -- "1..*" ItemTreino
+  ItemTreino "1" -- "1" Exercicio
 
   class Pessoa{
+    -Usuario usuario
     -string nome
     -DateTime dataNascimento
-    -Login login
     -List~Perfil~ perfis
     +getNome() string
     +setNome(string nome) 
     +getDataNascimento() DateTime
-    +setDataNascimento(DateTime dataNascimento) 
+    +setDataNascimento(DateTime dataNascimento)
+    +getUsuario() Usuario 
+    +setUsuario(Usuario usuario)
     +addPerfil(Perfil perfil) 
-    +getLogin() Login
-    +setLogin(Login login)
     +getPerfis() List~Perfil~ 
   }
 
-  class Login{
-    -string usuario
+  class Usuario{
+    -string idUsuario
     -string senha
-    +getUsuario() string
-    +setUsuario(string usuario) 
+    +getIdUsuario() string
+    +setIdUsuario(string Idusuario) 
     +getSenha() string
     +setSenha(string senha)
     -validaSenha() 
@@ -101,7 +101,7 @@ classDiagram
     +setExercicio(Exercicio exercicio) 
   }
 ```
-Para utilizar o sistema um usuário precisa de credenciais que serão gerenciadas pelo **LOGIN**. Após fazer o login, ele irá completar o cadastro com seu nome e senha, essas informações irão compor a classe **PESSOA**. Para acessar a lista de exercícios, o usuário deverá preencher o seu **PERFIL** com peso, altura e idade, dessa forma o app irá fazer a **RECOMENDAÇÃO** de uma lista de **EXERCÍCIOS** que ele poderá personalizar e obter o **TREINO**. Para alterar o treino é necessário atualizar o perfil.
+Para utilizar o sistema um usuário precisa de credenciais que serão gerenciadas pelo **Usuário**. Após fazer o login, ele irá completar o cadastro com seu nome e senha, essas informações irão compor a classe **PESSOA**. Para acessar a lista de exercícios, o usuário deverá preencher o seu **PERFIL** com peso, altura e idade, dessa forma o app irá fazer a **RECOMENDAÇÃO** de uma lista de **EXERCÍCIOS** que ele poderá personalizar e obter o **TREINO**. Para alterar o treino é necessário atualizar o perfil.
 
 ## Modelo ER
 

@@ -7,7 +7,7 @@ A boa notícia é que, graças à tecnologia, hoje podemos contar com soluções
 
 # Objetivo
 
- Desenvolver um aplicativo que ofereça uma lista de execicios de acordo com os objetivos do usuário, sejam eles,  perder peso, ganhar massa ou melhorar o condicionamento fisico, de forma inteligente e adaptável ao  seu desempenho.
+ Desenvolver um aplicativo que ofereça uma lista de execicios de acordo com os objetivos do usuário, sejam eles,  perder peso, ganhar massa ou melhorar o condicionamento fisico, de forma inteligente e adaptável ao seu desempenho.
 
 ## Objetivos específicos:
 
@@ -16,4 +16,8 @@ A boa notícia é que, graças à tecnologia, hoje podemos contar com soluções
 
 # Justificativa
 
-O Shape app é uma ferramenta de fácil acesso que otmiza a rotina de treinamentos ajundando o usuário a manter o foco no objetivo e não perder o ritmo e claro oferecendo um treino compatível com o seu objetivo, diminuido os riscos ocasionados pelo excesso de carga e intensidade dos exercício e duração dos treinos. 
+O Shape app é uma ferramenta de fácil acesso que otmiza a rotina de treinamentos ajundando o usuário a manter o foco no objetivo e não perder o ritmo e claro oferecendo um treino compatível com o seu objetivo, diminuido os riscos ocasionados pelo excesso de carga e intensidade dos exercício e duração dos treinos.
+
+# Público alvo 
+
+A aplicação abrange pessoas que desejam obter uma rotina de treino personalizada, mas não querem pagar por um personal Trainer, ou não se sentem à vontade com os  instrutores oferecidos pelas academias. 
