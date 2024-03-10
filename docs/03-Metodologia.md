@@ -81,7 +81,7 @@ Implementamos uma sistemática eficiente para o gerenciamento de issues, categor
 
 Segue uma ilustração que exemplifica nosso fluxo de trabalho de ramificação por recursos:
 
-![Metodologia](img/fluxo_ramificacao.svg)  
+![Metodologia](https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e3-proj-back-t1-time-2/blob/main/docs/img/fluxo_ramificacao.svg)  
 _Fluxo de trabalho por ramificação de recursos_
 
 Fonte: [Atlassian - Comparing Workflows](https://www.atlassian.com/br/git/tutorials/comparing-workflows/feature-branch-workflow)
@@ -115,7 +115,7 @@ A gestão dos backlogs do produto e o acompanhamento das entregas de cada Sprint
 
 Abaixo está um exemplo do nosso quadro Kanban no GitHub, demonstrando a distribuição das tarefas pelas diferentes etapas do desenvolvimento: 'A Fazer', 'Em Progresso', 'Em Revisão', e 'Concluído'.
 
-![Metodologia]()
+![Metodologia](https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e3-proj-back-t1-time-2/blob/main/docs/img/quadro_projeto_github.png)
  
 
 ### Ferramentas de Desenvolvimento do Shape App
