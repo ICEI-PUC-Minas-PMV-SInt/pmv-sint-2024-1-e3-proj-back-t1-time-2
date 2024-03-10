@@ -79,15 +79,25 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 | ID     | Descrição do Requisito                  | Prioridade |
 | ------ | --------------------------------------- | ---------- |
-| RF-001 | Permitir que o usuário cadastre tarefas | ALTA       |
-| RF-002 | Emitir um relatório de tarefas no mês   | MÉDIA      |
+| RF-001 | Permitir que os usuários se cadastrem na aplicação, fornecendo informações básicas e detalhes sobre suas condições médicas específicas. | ALTA       |
+| RF-002 | Permitir que os usuários criem e atualizem seus perfis.   | ALTA     |
+| RF-003 | A aplicação deve permitir que os usuários calculem seu Índice de Massa Corporal (IMC) fornecendo sua altura e peso.  | MÉDIA |
+| RF-004 | A aplicação deve recomendar uma lista de exercícios físicos adaptados às suas necessidades específicas e restrições médicas, conforme informações do perfil e avaliação inicial.  | ALTA |
+| RF-005 | A aplicação deve fornecer link de vídeos, imagens ou instruções passo a passo para demonstrar corretamente como realizar cada exercício recomendado.  | ALTA |
+| RF-006 | Permitir que os usuários personalizem suas próprias rotinas de treinamento, selecionando exercícios específicos e ajustando a intensidade de acordo com suas necessidades e limitações.  | MÉDIA |
+| RF-007 | Enviar notificações aos usuários para lembrá-los de realizar seus treinos, acompanhar seu progresso.  | MÉDIA | 
+| RF-008 | Permitir que os usuários compartilhem seu progresso de condicionamento físico, conquistas e esperiências com amigos e seguidores em redes sociais, incentivando o engajamento e a motuvação.  | BAIXA |
 
 ### Requisitos não Funcionais
 
 | ID      | Descrição do Requisito                                            | Prioridade |
 | ------- | ----------------------------------------------------------------- | ---------- |
-| RNF-001 | O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA      |
-| RNF-002 | Deve processar requisições do usuário em no máximo 3s             | BAIXA      |
+| RNF-001 | A aplicação deve ser responsiva e responder às ações do usuário em no máximo 2s.  | MÉDIA |
+| RNF-002 | A aplicação deve estar disponível online 99% do tempo, minimizando falhas e interrupções para que os usuários possam acessar os exercícios sem problemas.  | MÉDIA  |
+| RNF-003 | A aplicação deve estar em confrmidade com regulamentos de privacidade de dados, como a LGPD, para que os dados dos usuários sejam armazenados e utilizados de forma ética e transparente.  | ALTA  |
+| RNF-004 | A aplicação deve ser acessível para usuários com deficiências visuais, auditivas ou motoras, seguindo as diretrizes de acessibilidade da Web e oferecendo recursos adequados, como descrições de imagens e suporte para leitores de tela.  | MÉDIA | 
+| RNF-005 | A aplicação deve ser facilmente mantida e atualizada, com código limpo e modular. | ALTA |
+| RNF-006 | A aplicação deve ser capaz de lidar com um aumento no número de usuários e no volume de dados sem comprometer o desempenho, escalando conforme necessário. | ALTA |
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
