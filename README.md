@@ -16,7 +16,6 @@ Este grupo esta desenvolvendo um aplicativo denominado `Shape App`. Este aplicat
 * Elisabete Romana dos Santos de Paula
 * Isabella Cristina da Silva Prado
 * Murilo Silva Rezende
-* Rafaela Rodrigues Santana
 
 ## Orientador
 
