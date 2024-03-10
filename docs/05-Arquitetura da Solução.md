@@ -128,7 +128,7 @@ Assim, neste primeiro momento, a proposta de arquitetura engloba:
 Essa arquitetura de microsserviços permite escalabilidade, flexibilidade e facilidade de manutenção, já que cada serviço pode ser desenvolvido, implantado e escalado independentemente. Além disso, a separação de preocupações entre os diferentes serviços facilita a evolução do aplicativo ao longo do tempo.
 
 -----------
-# Doínio Conceitual
+# Domínio Conceitual
 
 O back-end do aplicativo incluirá as seguintes entidades e seus relacionamentos:
 
