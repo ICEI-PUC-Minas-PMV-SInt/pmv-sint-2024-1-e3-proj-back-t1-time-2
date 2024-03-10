@@ -1,4 +1,4 @@
-# Metodologia Adaptada do Projeto Shape App
+# Metodologia 
 
 A metodologia de trabalho para o desenvolvimento do Shape App iniciou-se com um processo de pesquisa intensiva. Realizamos entrevistas com potenciais usuários e partes interessadas para identificar e analisar as necessidades e problemas específicos no contexto de exercícios físicos e treinamentos personalizados. Essas informações foram fundamentais para estruturar as soluções que o aplicativo deveria oferecer.
 
