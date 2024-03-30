@@ -1,87 +1,137 @@
+# Metodologia 
 
-# Metodologia
+A metodologia de trabalho para o desenvolvimento do Shape App iniciou-se com um processo de pesquisa intensiva. Realizamos entrevistas com potenciais usuários e partes interessadas para identificar e analisar as necessidades e problemas específicos no contexto de exercícios físicos e treinamentos personalizados. Essas informações foram fundamentais para estruturar as soluções que o aplicativo deveria oferecer.
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Documentação de Especificação</a></span>
+Na fase de organização e otimização do ambiente de trabalho, adotamos a metodologia SCRUM. Essa escolha foi feita por sua eficácia em gerenciar e executar trabalhos de forma ágil e dinâmica, especialmente adequada para o desenvolvimento de software. O trabalho foi dividido em pequenos ciclos de atividades, conhecidos como Sprints, permitindo-nos abordar problemas complexos de forma adaptativa e iterativa.
 
-Descreva aqui a metodologia de trabalho do grupo para atacar o problema. Definições sobre os ambiente de trabalho utilizados pela  equipe para desenvolver o projeto. Abrange a relação de ambientes utilizados, a estrutura para gestão do código fonte, além da definição do processo e ferramenta através dos quais a equipe se organiza (Gestão de Times).
+Para o desenvolvimento técnico da Aplicação Web, utilizamos diversas ferramentas especializadas:
+
+1. **Controle de Versão e Hospedagem do Repositório:**
+   - Git foi escolhido como nossa ferramenta de controle de versão, e utilizamos o GitHub para hospedar o repositório do projeto. 
+
+2. **Desenvolvimento de Interfaces e Wireframes:**
+   - Para o desenho e a prototipagem das interfaces do usuário, a equipe utilizou o Adobe Illustrator. O que ajudou na criação de elementos gráficos refinados.
+
+3. **Ferramentas de Diagramação:**
+   - Para a modelagem e a visualização da arquitetura do sistema, o Mermaid foi usado para criar o diagrama de classes, proporcionando uma visão clara da estrutura do nosso aplicativo.
+   - Utilizamos o draw.io para elaborar o diagrama de casos de uso, facilitando a compreensão dos diferentes fluxos de interação do usuário com o aplicativo.
+
+4. **Comunicação em Grupo:**
+   - Para manter a equipe alinhada e promover uma comunicação eficiente, utilizamos o WhatsApp e o Microsoft Teams. Essas ferramentas permitiram discussões em tempo real, reuniões remotas e atualizações rápidas sobre o progresso do projeto.
+
+Essa metodologia adaptada permitiu que nossa equipe trabalhasse de maneira eficaz e sincronizada, focando na criação de um aplicativo de exercícios personalizados que atende às necessidades específicas de nossos usuários.
+
 
 ## Relação de Ambientes de Trabalho
 
-Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes com seu respectivo propósito deverá ser apresentada em uma tabela que especifica que detalha Ambiente, Plataforma e Link de Acesso. 
-Nota: Vide documento modelo do estudo de caso "Portal de Notícias" e defina também os ambientes e frameworks que serão utilizados no desenvolvimento de aplicações móveis.
+<table>
+ <thead>
+  <tr>
+   <th>Ambiente</th>
+   <th>Plataforma</th>
+   <th>Link de Acesso</th>
+ </thead>
+ <tbody>
+  <tr>
+   <td>Repositório de Código Fonte</td>
+   <td>GitHub</td>
+   <td>https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e3-proj-back-t1-time-2</td>
+  </tr>
+  <tr>
+   <td>Documentos do projeto</td>
+   <td>GitHub</td>
+   <td>https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e3-proj-back-t1-time-2/tree/main/docs</td>
+  </tr>
+  <tr>
+   <td>Gerenciamento do projeto</td>
+   <td>GitHub Projects</td>
+   <td>https://github.com/orgs/ICEI-PUC-Minas-PMV-SInt/projects/23</td>
+  </tr>
+ </tbody>
+ </table>
 
-## Controle de Versão
+## Controle de Versão do Shape App
 
-A ferramenta de controle de versão adotada no projeto foi o
-[Git](https://git-scm.com/), sendo que o [Github](https://github.com)
-foi utilizado para hospedagem do repositório.
+Para o desenvolvimento do Shape App, adotamos o [Git](https://git-scm.com/) como nossa ferramenta de controle de versão, com o [GitHub](https://github.com) servindo como a plataforma para hospedagem do repositório. Essa abordagem oferece Confiabilidade e flexibilidade para o gerenciamento do nosso código-fonte.
 
-O projeto segue a seguinte convenção para o nome de branches:
+### Convenções de Branches
 
-- `main`: versão estável já testada do software
-- `unstable`: versão já testada do software, porém instável
-- `testing`: versão em testes do software
-- `dev`: versão de desenvolvimento do software
+Adotamos uma estrutura clara de branches para facilitar o desenvolvimento e manutenção do software:
 
-Quanto à gerência de issues, o projeto adota a seguinte convenção para
-etiquetas:
+- `main`: Contém a versão estável do aplicativo, já testada e pronta para produção.
+- `unstable`: Usada para versões que passaram por testes, mas ainda podem conter instabilidades.
+- `testing`: Destinada à realização de testes intensivos de novas funcionalidades.
+- `dev`: A branch de desenvolvimento ativo, onde as novas features são inicialmente implementadas.
 
-- `documentation`: melhorias ou acréscimos à documentação
-- `bug`: uma funcionalidade encontra-se com problemas
-- `enhancement`: uma funcionalidade precisa ser melhorada
-- `feature`: uma nova funcionalidade precisa ser introduzida
+### Gerenciamento de Issues
 
-Discuta como a configuração do projeto foi feita na ferramenta de versionamento escolhida. Exponha como a gerência de tags, merges, commits e branchs é realizada. Discuta como a gerência de issues foi realizada.
+Implementamos uma sistemática eficiente para o gerenciamento de issues, categorizando-as com as seguintes etiquetas:
 
-> **Links Úteis**:
-> - [Microfundamento: Gerência de Configuração](https://pucminas.instructure.com/courses/87878/)
-> - [Tutorial GitHub](https://guides.github.com/activities/hello-world/)
-> - [Git e Github](https://www.youtube.com/playlist?list=PLHz_AreHm4dm7ZULPAmadvNhH6vk9oNZA)
->  - [Comparando fluxos de trabalho](https://www.atlassian.com/br/git/tutorials/comparing-workflows)
-> - [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
-> - [The gitflow workflow - in less than 5 mins](https://www.youtube.com/watch?v=1SXpE08hvGs)
+- `documentation`: Para demandas relacionadas à melhoria ou adição de documentação.
+- `bug`: Identifica problemas nas funcionalidades existentes.
+- `enhancement`: Quando uma funcionalidade atual necessita de aprimoramento.
+- `feature`: Para o desenvolvimento de novas funcionalidades.
+
+### Fluxo de Trabalho e Colaboração
+
+- Cada desenvolvedor trabalha em uma branch dedicada, minimizando interferências no código principal.
+- A branch `main` é acessível a toda a equipe, com os desenvolvedores mantendo versões locais nas suas respectivas branches.
+- Atualizações são submetidas via commits para o repositório central. Após a conclusão e revisão do trabalho em uma branch, as mudanças são integradas ao projeto principal por meio de pull requests e merges.
+- Tags são usadas para marcar diferentes estágios de desenvolvimento de recursos.
+
+Segue uma ilustração que exemplifica nosso fluxo de trabalho de ramificação por recursos:
+
+![Metodologia](https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e3-proj-back-t1-time-2/blob/main/docs/img/fluxo_ramificacao.svg)  
+_Fluxo de trabalho por ramificação de recursos_
+
+Fonte: [Atlassian - Comparing Workflows](https://www.atlassian.com/br/git/tutorials/comparing-workflows/feature-branch-workflow)
 
 ## Gerenciamento de Projeto
 
 ### Divisão de Papéis
 
-Apresente a divisão de papéis entre os membros do grupo.
+A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para definição do processo de desenvolvimento. 
 
-Exemplificação: A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para definição do processo de desenvolvimento. A equipe está organizada da seguinte maneira:
-- Scrum Master: Felipe Domingos;
-- Product Owner: Rommel Carneiro;
-- Equipe de Desenvolvimento: Pedro Penna, Pedro Ivo, Rodrigo Richard;
-- Equipe de Design: Simone Nogueira.
+A equipe está organizada da seguinte maneira:
+- Scrum Master: Danilo Henrique Pupin de Carvalho;
+- Product Owner: Isabella Cristina da Silva Prado;
+- Equipe de Desenvolvimento: Alicia Ribeiro Andrade da Silva, Cheyenne Natane Fontes de Souza, Elisabete Romana dos Santos de Paula, Murilo Silva Rezende;
 
-> **Links Úteis**:
-> - [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
-> - [Os papéis do Scrum e a verdade sobre cargos nessa técnica](https://www.atlassian.com/br/agile/scrum/roles)
 
-### Processo
+### Processo de Desenvolvimento 
 
-Coloque  informações sobre detalhes da implementação do Scrum seguido pelo grupo. O grupo deverá fazer uso do recurso de gerenciamento de projeto oferecido pelo GitHub, que permite acompanhar o andamento do projeto, a execução das tarefas e o status de desenvolvimento da solução.
+No desenvolvimento do Shape App, serão organizados Sprints focados na implementação e refinamento de funcionalidades essenciais, tais como:
+
+- Cadastro de usuários;
+- Perfil do usuário e personalização;
+- Monitoramento e atualização de treinos;
+- Cálculo do Índice de Massa Corporal (IMC);
+- Registro da frequência de exercícios na academia;
+- Compartilhamento de conquistas e progresso do usuário.
+
+Reuniões semanais com a equipe de desenvolvedores são agendadas para garantir uma comunicação efetiva e o alinhamento das atividades de desenvolvimento com os objetivos do projeto.
+
+A gestão dos backlogs do produto e o acompanhamento das entregas de cada Sprint serão realizados por meio dos quadros de projeto do GitHub, utilizando o modelo Kanban automatizado. Este modelo apoia a organização dos itens de backlog durante cada Sprint e facilita a distribuição das tarefas entre os membros da equipe.
+
+Abaixo está um exemplo do nosso quadro Kanban no GitHub, demonstrando a distribuição das tarefas pelas diferentes etapas do desenvolvimento: 'A Fazer', 'Em Progresso', 'Em Revisão', e 'Concluído'.
+
+![Metodologia](https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e3-proj-back-t1-time-2/blob/main/docs/img/quadro_projeto_github.png)
  
-> **Links Úteis**:
-> - [Planejamento e Gestáo Ágil de Projetos](https://pucminas.instructure.com/courses/87878/pages/unidade-2-tema-2-utilizacao-de-ferramentas-para-controle-de-versoes-de-software)
-> - [Sobre quadros de projeto](https://docs.github.com/pt/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards)
-> - [Project management, made simple](https://github.com/features/project-management/)
-> - [Sobre quadros de projeto](https://docs.github.com/pt/github/managing-your-work-on-github/about-project-boards)
-> - [Como criar Backlogs no Github](https://www.youtube.com/watch?v=RXEy6CFu9Hk)
-> - [Tutorial Slack](https://slack.com/intl/en-br/)
 
-### Ferramentas
+### Ferramentas de Desenvolvimento do Shape App
 
-As ferramentas empregadas no projeto são:
+A eficiência no desenvolvimento da Aplicação Web Shape App é alcançada através do uso de ferramentas especializadas para cada aspecto técnico do projeto:
 
-- Editor de código.
-- Ferramentas de comunicação
-- Ferramentas de desenho de tela (_wireframing_)
+1. **Controle de Versão e Hospedagem do Repositório:**
+   - O **Git** foi adotado como a ferramenta de controle de versão devido à sua eficiência e robustez. O repositório do projeto é hospedado no **GitHub**, facilitando o acesso, colaboração e gerenciamento do código fonte entre os membros da equipe.
 
-O editor de código foi escolhido porque ele possui uma integração com o sistema de versão. As ferramentas de comunicação utilizadas possuem integração semelhante e por isso foram selecionadas. Por fim, para criar diagramas utilizamos essa ferramenta por melhor captar as necessidades da nossa solução.
+2. **Desenvolvimento de Interfaces e Wireframes:**
+   - O design das interfaces do usuário é criado utilizando o **Adobe Illustrator**, uma ferramenta poderosa que permite a criação de elementos gráficos detalhados e wireframes de alta fidelidade.
 
-Liste quais ferramentas foram empregadas no desenvolvimento do projeto, justificando a escolha delas, sempre que possível.
- 
-> **Possíveis Ferramentas que auxiliarão no gerenciamento**: 
-> - [Slack](https://slack.com/)
-> - [Github](https://github.com/)
+3. **Ferramentas de Diagramação:**
+   - A estrutura e a arquitetura do aplicativo são visualizadas através de diagramas de classes criados com o **Mermaid**, proporcionando clareza e entendimento da relação entre os componentes do sistema.
+   - Para os diagramas de casos de uso, a ferramenta escolhida foi o **draw.io**, que oferece flexibilidade na representação dos fluxos de interação dos usuários com as funcionalidades do aplicativo.
+
+4. **Comunicação em Grupo:**
+   - A comunicação contínua e eficaz é mantida com o uso do **WhatsApp** para troca de informações rápidas e resolução de dúvidas. Para reuniões de alinhamento e discussões mais aprofundadas, utilizamos o **Microsoft Teams**, que também suporta chamadas de vídeo e compartilhamento de tela para colaboração em tempo real.
+
