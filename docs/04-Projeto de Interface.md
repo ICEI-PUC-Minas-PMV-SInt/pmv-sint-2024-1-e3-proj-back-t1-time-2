@@ -43,19 +43,19 @@ https://marvelapp.com/prototype/10ajh0ch
 
 #### Cadastro de nova senha (Passo 1)
 
-<img src="img/wireframes/Wireframe_12 - Nova senha.jpg" width="250"/>
+<img src="img/wireframes/adpt fundos/Wireframes_12 - Nova senha.jpg" width="250"/>
 
 #### Cadastro de nova senha (Passo 2)
 
-<img src="img/wireframes/Wireframe_13 - Nova senha 2.jpg" width="250"/>
+<img src="img/wireframes/adpt fundos/Wireframes_13 - Nova senha 2.jpg" width="250"/>
 
 #### Cadastro de nova senha (Passo 3)
 
-<img src="img/wireframes/Wireframe_14 - Nova senha 3.jpg" width="250"/>
+<img src="img/wireframes/adpt fundos/Wireframes_14 - Nova senha 3.jpg" width="250"/>
 
-#### Pagina Incial
+#### Pagina Inicial
 
-<img src="img/wireframes/Wireframe_4 - Pagina Inicial-2.jpg" width="250"/>
+<img src="img/wireframes/adpt fundos/Wireframes_4 - Pagina Inicial.jpg" width="250"/>
 
 #### Meus Treinos
 
@@ -71,7 +71,7 @@ https://marvelapp.com/prototype/10ajh0ch
 
 #### Finalização da criação de novo treino
 
-<img src="img/wireframes/Wireframe_15---parabenizacao.jpg" width="250"/>
+<img src="img/wireframes/adpt fundos/Wireframes_7 - Finaização treino.jpg" width="250"/>
 
 #### Frequencia na Academia
 
