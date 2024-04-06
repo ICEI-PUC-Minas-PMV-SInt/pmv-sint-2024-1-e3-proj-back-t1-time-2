@@ -15,7 +15,7 @@ Este grupo esta desenvolvendo um aplicativo denominado `Shape App`. Este aplicat
 * Danilo Henrique Pupin de Carvalho
 * Elisabete Romana dos Santos de Paula
 * Isabella Cristina da Silva Prado
-* Murilo Silva Rezende
+* Juliano Cesar Santos Cruz
 
 ## Orientador
 
