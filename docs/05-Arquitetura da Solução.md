@@ -163,7 +163,6 @@ Estes itens apresentados acima representam um modelo de domínio básico e conce
 
 ---------
 ## Modelo ER
-![ Shape App](caminho/para/imc:\Users\elisa\Downloads\SHAPE APP.pngagem.png)
 
 O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.]
 
