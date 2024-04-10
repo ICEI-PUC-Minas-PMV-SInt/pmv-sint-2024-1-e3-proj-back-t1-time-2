@@ -17,13 +17,17 @@ A fonte de sistema escolhida foi a família Poppins. Esta família tipográfica 
 
 O diagrama de fluxos de telas abaixo representa o fluxo básico de telas nas quais o usuário pode navegar a fim de solucionar os requisitos funcionais descritos em <a href="02-Especificação do Projeto.md">Especificações do Projeto.</a>
 
-<img src="img/fluxo-telas2.jpg" width="600"/>
+<img src="img/new-fluxo-telas.png" width="600"/>
 
 ## Wireframes
 
 Cada uma das telas acima foi prototipada em wireframes que são apresentados a seguir.
 
 Os protótipos seguem o conceito de Mobile First, por esse motivo inicialmente foram desenvolvidos com foco em dispositivos mobile, em que na etapa de desenvolvimento da interface definitiva, o layout desktop basicamente fará a adaptação dos elementos para as telas com maior largura.
+
+Foi desenvolvido também o modelo interativo do Wireflow através da ferramenta MarvelApp. O modelo está disponível no link a seguir:
+
+https://marvelapp.com/prototype/10ajh0ch
 
 #### Tela Inicial
 
@@ -37,9 +41,21 @@ Os protótipos seguem o conceito de Mobile First, por esse motivo inicialmente f
 
 <img src="img/wireframes/Wireframe_3 - Login.jpg" width="250"/>
 
-#### Pagina Incial
+#### Cadastro de nova senha (Passo 1)
 
-<img src="img/wireframes/Wireframe_4 - Pagina Inicial.jpg" width="250"/>
+<img src="img/wireframes/adpt fundos/Wireframes_12 - Nova senha.jpg" width="250"/>
+
+#### Cadastro de nova senha (Passo 2)
+
+<img src="img/wireframes/adpt fundos/Wireframes_13 - Nova senha 2.jpg" width="250"/>
+
+#### Cadastro de nova senha (Passo 3)
+
+<img src="img/wireframes/adpt fundos/Wireframes_14 - Nova senha 3.jpg" width="250"/>
+
+#### Pagina Inicial
+
+<img src="img/wireframes/adpt fundos/Wireframes_4 - Pagina Inicial.jpg" width="250"/>
 
 #### Meus Treinos
 
@@ -52,6 +68,10 @@ Os protótipos seguem o conceito de Mobile First, por esse motivo inicialmente f
 #### Novo Treino
 
 <img src="img/wireframes/Wireframe_7 - Novo Treino.jpg" width="250"/>
+
+#### Finalização da criação de novo treino
+
+<img src="img/wireframes/adpt fundos/Wireframes_7 - Finaização treino.jpg" width="250"/>
 
 #### Frequencia na Academia
 
