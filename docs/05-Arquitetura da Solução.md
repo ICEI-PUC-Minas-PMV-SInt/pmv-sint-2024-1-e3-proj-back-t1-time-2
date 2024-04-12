@@ -10,7 +10,7 @@ Definição de como o software é estruturado em termos dos componentes que faze
 
 ```mermaid
 classDiagram
-   
+
   Pessoa "1" -- "1" Usuario
   Pessoa "1" -- "1..*" Perfil
   Perfil "1" -- "1" Treino
@@ -25,31 +25,31 @@ classDiagram
     -DateTime dataNascimento
     -List~Perfil~ perfis
     +getNome() string
-    +setNome(string nome) 
+    +setNome(string nome)
     +getDataNascimento() DateTime
     +setDataNascimento(DateTime dataNascimento)
-    +getUsuario() Usuario 
+    +getUsuario() Usuario
     +setUsuario(Usuario usuario)
-    +addPerfil(Perfil perfil) 
-    +getPerfis() List~Perfil~ 
+    +addPerfil(Perfil perfil)
+    +getPerfis() List~Perfil~
   }
 
   class Usuario{
     -string idUsuario
     -string senha
     +getIdUsuario() string
-    +setIdUsuario(string Idusuario) 
+    +setIdUsuario(string Idusuario)
     +getSenha() string
     +setSenha(string senha)
-    -validaSenha() 
+    -validaSenha()
   }
 
   class Perfil{
     -DateTime dataPerfil
     -double idade
     -double altura
-    -double peso 
-    -string nivel 
+    -double peso
+    -string nivel
     -double imc
     -Treino treino
     -List~Recomendacao~ recomendacoes
@@ -64,7 +64,7 @@ classDiagram
     +getTreino() Treino
     +setTreino(Treino treino)
     +addRecomendacao(Recomendacao recomendacao)
-    +getRecomendacoes() List~Recomendacao~ 
+    +getRecomendacoes() List~Recomendacao~
   }
 
   class Treino{
@@ -88,23 +88,26 @@ classDiagram
     +setDescricao(string descricao)
     +setGrupoMuscular(string grupoMuscular)
   }
-  
+
   class ItemTreino{
-    -int repeticoes 
+    -int repeticoes
     -int series
     -Exercicio exercicio
     +getRepeticoes() int
     +setRepeticoes(int repeticoes)
     +getSeries() int
-    +setSeries(int series) 
+    +setSeries(int series)
     +getExercicio() Exercicio
-    +setExercicio(Exercicio exercicio) 
+    +setExercicio(Exercicio exercicio)
   }
 ```
+
 Para utilizar o sistema um usuário precisa de credenciais que serão gerenciadas pelo **Usuário**. Após fazer o login, ele irá completar o cadastro com seu nome e senha, essas informações irão compor a classe **PESSOA**. Para acessar a lista de exercícios, o usuário deverá preencher o seu **PERFIL** com peso, altura e idade, dessa forma o app irá fazer a **RECOMENDAÇÃO** de uma lista de **EXERCÍCIOS** que ele poderá personalizar e obter o **TREINO**. Para alterar o treino é necessário atualizar o perfil.
 
---------
+---
+
 ## Arquitetura de Solução
+
 A arquitetura de microserviços foi considerada a mais adequada para este projeto pelo fato de que permite uma maior escalabilidade, flexibilidade e modularidade. Com a arquitetura de microserviços, cada componente do sistema pode ser desenvolvido, implantado e escalado independentemente, o que facilita a manutenção e evolução do aplicativo. Além disso, os microsserviços podem ser projetados para se concentrar em áreas específicas de funcionalidade, como autenticação de usuários, recomendação de exercícios e gerenciamento de treinamentos, o que facilita a organização e a manutenção do código. Isso também permite que diferentes equipes trabalhem em paralelo em partes diferentes do aplicativo, acelerando o desenvolvimento e permitindo uma resposta mais rápida às mudanças e demandas do mercado.
 
 Assim, neste primeiro momento, a proposta de arquitetura engloba:
@@ -127,53 +130,59 @@ Assim, neste primeiro momento, a proposta de arquitetura engloba:
 
 Essa arquitetura de microsserviços permite escalabilidade, flexibilidade e facilidade de manutenção, já que cada serviço pode ser desenvolvido, implantado e escalado independentemente. Além disso, a separação de preocupações entre os diferentes serviços facilita a evolução do aplicativo ao longo do tempo.
 
------------
+---
+
 # Domínio Conceitual
 
 O back-end do aplicativo incluirá as seguintes entidades e seus relacionamentos:
 
 **Usuário:**
+
 - Atributos: ID, nome de usuário, senha criptografada, e-mail, data de nascimento, sexo, altura, peso.
 - Relacionamentos: Pode ter um perfil de usuário associado.
-**Perfil de Usuário:**
+  **Perfil de Usuário:**
 - Atributos: ID, objetivo de condicionamento físico (perder peso, ganhar massa, manter forma).
 - Relacionamentos: Pertence a um usuário.
 
 **Exercício:**
+
 - Atributos: ID, nome, descrição, grupo muscular alvo, nível de dificuldade.
 - Relacionamentos: Pode ser parte de uma rotina de treinamento.
 
 **Rotina de Treinamento:**
+
 - Atributos: ID, data de criação, data de modificação.
 - Relacionamentos: Contém uma lista de exercícios recomendados para o usuário.
 
 **Histórico de Treinamento:**
+
 - Atributos: ID, data de realização do treino, duração do treino, nível de esforço percebido, feedback do usuário.
 - Relacionamentos: Relacionado a um usuário e a uma rotina de treinamento.
 
 **Notificação/Lembrete:**
+
 - Atributos: ID, tipo de notificação (lembrete de treino, dica de saúde, etc.), conteúdo, data/hora de envio.
 - Relacionamentos: Pode ser associado a um usuário.
 
 **Feedback do Usuário:**
+
 - Atributos: ID, comentário, classificação (por exemplo, de 1 a 5 estrelas).
 - Relacionamentos: Relacionado a um usuário e a um exercício ou treino específico.
 
 Estes itens apresentados acima representam um modelo de domínio básico e conceitual do back-end do aplicativo. Cada entidade tem seus atributos próprios e pode estar relacionada a outras entidades conforme necessário para o funcionamento do aplicativo. Este modelo poderá ter alterações pois levará em consideração as dificuldades apresentadas durante o desenvolvimento do APP.
 
----------
+---
+
 ## Modelo ER
 
-O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.]
+O Modelo de Entidade e Relacionamento representa a estrutura dos dados no BD.
 
-As referências abaixo irão auxiliá-lo na geração do artefato “Modelo ER”.
-
-> - [Como fazer um diagrama entidade relacionamento | Lucidchart](https://www.lucidchart.com/pages/pt/como-fazer-um-diagrama-entidade-relacionamento)
+<img src="img/mer.png" width="700"/>
 
 ## Esquema Relacional
 
 O Esquema Relacional corresponde à representação dos dados em tabelas juntamente com as restrições de integridade e chave primária.
- 
+
 As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Relacional”.
 
 > - [Criando um modelo relacional - Documentação da IBM](https://www.ibm.com/docs/pt-br/cognos-analytics/10.2.2?topic=designer-creating-relational-model)
