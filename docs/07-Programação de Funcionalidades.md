@@ -14,6 +14,8 @@ Foram criadas as três camadas do padrão MVC (Model, View e Controller). Foram 
 
 É possível visualizar o funcionamento da aplicação no vídeo abaixo.
 
+https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e3-proj-back-t1-time-2/assets/137354714/eb57228f-40cf-40ee-b313-83da4fb80134
+
 Para cada requisito funcional, pode ser entregue um artefato desse tipo
 
 > **Links Úteis**:
@@ -23,3 +25,5 @@ Para cada requisito funcional, pode ser entregue um artefato desse tipo
 > - [JSON Data Set Sample](https://opensource.adobe.com/Spry/samples/data_region/JSONDataSetSample.html)
 > - [JSON - Introduction (W3Schools)](https://www.w3schools.com/js/js_json_intro.asp)
 > - [JSON Tutorial (TutorialsPoint)](https://www.tutorialspoint.com/json/index.htm)
+
+
