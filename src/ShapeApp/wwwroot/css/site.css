@@ -1,0 +1,92 @@
+@font-face {
+    font-family: poppinsRegular;
+    src: url('../fonts/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: poppinsBold;
+    src: url('../fonts/Poppins-Bold.ttf');
+}
+
+*{
+    box-sizing: border-box;
+    font-family: poppinsRegular !important;
+}
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.menuNavegacao{
+    width: 100vw;
+    height: 50px;
+}
+
+.menuNavegacao ul {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.menuNavegacao ul li {
+    list-style: none;
+    background-color: #FA5744;
+    width: 12.5%;
+    height: 100%;
+    transition: 0.2s ease-in-out;
+}
+
+.menuNavegacao ul li:hover{
+    background-color: #731B1F;
+}
+
+.menuNavegacao ul li a{
+    width: 100%;
+    height: 100%;
+    color: white !important;
+    text-align: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 18px
+}
+
+.caixaHome {
+    overflow: hidden !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(180deg, #5A1B1F, #FA5744);
+    display:grid;
+    place-items:center;
+}
