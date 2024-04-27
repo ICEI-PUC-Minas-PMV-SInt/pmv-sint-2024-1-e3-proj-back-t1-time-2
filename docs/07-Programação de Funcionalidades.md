@@ -4,6 +4,18 @@
 
 Implementação do sistema descritas por meio dos requisitos funcionais e/ou não funcionais. Deve relacionar os requisitos atendidos os artefatos criados (código fonte) além das estruturas de dados utilizadas e as instruções para acesso e verificação da implementação que deve estar funcional no ambiente de hospedagem.
 
+## Detalhamento das funcionalidades desenvolvidas durante o microfundamento Desenvolvimento Web Backend:
+
+### Aluna Isabella
+
+Durante o microfundamento de foi desenvolvida uma aplicação web para gerenciar o consumo de veículos utilizando o Framework ASP.NET Core MVC.
+
+Foram criadas as três camadas do padrão MVC (Model, View e Controller). Foram criadas as classes (veículo, consumo e usuário) e a configuração das operações de CRUD (Create, Read, Update, Delete) para o modelo das classes. Também foram desenvolvidas configurações de criptografia das senhas, autenticação e autorização das páginas.
+
+É possível visualizar o funcionamento da aplicação no vídeo abaixo.
+
+https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e3-proj-back-t1-time-2/assets/137354714/eb57228f-40cf-40ee-b313-83da4fb80134
+
 Para cada requisito funcional, pode ser entregue um artefato desse tipo
 
 > **Links Úteis**:
@@ -13,3 +25,5 @@ Para cada requisito funcional, pode ser entregue um artefato desse tipo
 > - [JSON Data Set Sample](https://opensource.adobe.com/Spry/samples/data_region/JSONDataSetSample.html)
 > - [JSON - Introduction (W3Schools)](https://www.w3schools.com/js/js_json_intro.asp)
 > - [JSON Tutorial (TutorialsPoint)](https://www.tutorialspoint.com/json/index.htm)
+
+
