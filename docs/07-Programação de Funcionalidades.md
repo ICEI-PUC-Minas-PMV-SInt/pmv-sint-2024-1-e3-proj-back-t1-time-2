@@ -16,6 +16,10 @@ Foram criadas as três camadas do padrão MVC (Model, View e Controller). Foram 
 
 https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e3-proj-back-t1-time-2/assets/137354714/eb57228f-40cf-40ee-b313-83da4fb80134
 
+### Aluna Elisabete
+
+Acompanhando o microfundamento, o desenvolvimento da aplicação Web, Veículos, utilizando ASP.NET.Core MVC ocorreu Erro de compilação  na criação da camada View, mas depois foi encontrado um Erro de Sintaxe, que sendo corrigido, permitiu a criação da View. O restante das operções e configurações ocorreram conforme o professor Kleber ensinou.
+
 Para cada requisito funcional, pode ser entregue um artefato desse tipo
 
 > **Links Úteis**:
