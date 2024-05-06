@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeApp", "ShapeApp.csproj", "{BBB8A5DF-F9CD-4EC7-880E-07A58DE167DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BBB8A5DF-F9CD-4EC7-880E-07A58DE167DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBB8A5DF-F9CD-4EC7-880E-07A58DE167DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBB8A5DF-F9CD-4EC7-880E-07A58DE167DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBB8A5DF-F9CD-4EC7-880E-07A58DE167DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A473AFAB-755B-4327-8D14-AA21BD161A62}
+	EndGlobalSection
+EndGlobal

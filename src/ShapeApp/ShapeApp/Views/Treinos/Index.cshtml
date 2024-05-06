@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ShapeApp.Models.Treino>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Meus Treinos</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Adicionar Treino</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DataInicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Objetivo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DuracaoRecomendada)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Objetivo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DuracaoRecomendada)
+            </td>
+            <td>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                    <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Visualizar</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Apagar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

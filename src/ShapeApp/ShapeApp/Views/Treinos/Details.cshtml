@@ -1,0 +1,36 @@
+﻿@model ShapeApp.Models.Treino
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Meu Treino</h1>
+
+<div>
+    <h4>Treino</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataInicio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataInicio)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Objetivo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Objetivo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DuracaoRecomendada)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DuracaoRecomendada)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index" class="btn btn-info">Voltar</a> |
+    <a asp-action="Edit" class="btn btn-warning" asp-route-id="@Model?.Id">Editar</a>
+</div>
