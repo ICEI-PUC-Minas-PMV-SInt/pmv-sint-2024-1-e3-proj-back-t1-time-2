@@ -22,6 +22,21 @@ namespace ShapeApp.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("ExercicioTreino", b =>
+                {
+                    b.Property<int>("ExerciciosId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TreinosId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ExerciciosId", "TreinosId");
+
+                    b.HasIndex("TreinosId");
+
+                    b.ToTable("ExercicioTreino");
+                });
+
             modelBuilder.Entity("ShapeApp.Models.Exercicio", b =>
                 {
                     b.Property<int>("Id")
@@ -40,12 +55,7 @@ namespace ShapeApp.Migrations
                     b.Property<int>("Series")
                         .HasColumnType("int");
 
-                    b.Property<int?>("TreinoId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("TreinoId");
 
                     b.ToTable("Exercicios");
                 });
@@ -72,16 +82,19 @@ namespace ShapeApp.Migrations
                     b.ToTable("Treinos");
                 });
 
-            modelBuilder.Entity("ShapeApp.Models.Exercicio", b =>
+            modelBuilder.Entity("ExercicioTreino", b =>
                 {
-                    b.HasOne("ShapeApp.Models.Treino", null)
-                        .WithMany("Exercicios")
-                        .HasForeignKey("TreinoId");
-                });
+                    b.HasOne("ShapeApp.Models.Exercicio", null)
+                        .WithMany()
+                        .HasForeignKey("ExerciciosId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-            modelBuilder.Entity("ShapeApp.Models.Treino", b =>
-                {
-                    b.Navigation("Exercicios");
+                    b.HasOne("ShapeApp.Models.Treino", null)
+                        .WithMany()
+                        .HasForeignKey("TreinosId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

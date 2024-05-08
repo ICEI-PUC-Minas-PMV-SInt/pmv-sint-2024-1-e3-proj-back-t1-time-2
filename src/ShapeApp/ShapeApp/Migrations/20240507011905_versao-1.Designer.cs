@@ -12,8 +12,8 @@ using ShapeApp.Models;
 namespace ShapeApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240505202054_Version1")]
-    partial class Version1
+    [Migration("20240507011905_versao-1")]
+    partial class versao1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,21 @@ namespace ShapeApp.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("ExercicioTreino", b =>
+                {
+                    b.Property<int>("ExerciciosId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TreinosId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ExerciciosId", "TreinosId");
+
+                    b.HasIndex("TreinosId");
+
+                    b.ToTable("ExercicioTreino");
+                });
 
             modelBuilder.Entity("ShapeApp.Models.Exercicio", b =>
                 {
@@ -43,12 +58,7 @@ namespace ShapeApp.Migrations
                     b.Property<int>("Series")
                         .HasColumnType("int");
 
-                    b.Property<int?>("TreinoId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("TreinoId");
 
                     b.ToTable("Exercicios");
                 });
@@ -75,16 +85,19 @@ namespace ShapeApp.Migrations
                     b.ToTable("Treinos");
                 });
 
-            modelBuilder.Entity("ShapeApp.Models.Exercicio", b =>
+            modelBuilder.Entity("ExercicioTreino", b =>
                 {
-                    b.HasOne("ShapeApp.Models.Treino", null)
-                        .WithMany("Exercicios")
-                        .HasForeignKey("TreinoId");
-                });
+                    b.HasOne("ShapeApp.Models.Exercicio", null)
+                        .WithMany()
+                        .HasForeignKey("ExerciciosId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-            modelBuilder.Entity("ShapeApp.Models.Treino", b =>
-                {
-                    b.Navigation("Exercicios");
+                    b.HasOne("ShapeApp.Models.Treino", null)
+                        .WithMany()
+                        .HasForeignKey("TreinosId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

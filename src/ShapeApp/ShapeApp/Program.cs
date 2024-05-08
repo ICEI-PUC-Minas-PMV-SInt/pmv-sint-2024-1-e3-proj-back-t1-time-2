@@ -31,4 +31,9 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+// Roda migrations automaticamente na inicialização da aplicação
+var scope = app.Services.CreateScope();
+var dbContext = scope.ServiceProvider.GetService<AppDbContext>();
+dbContext.Database.Migrate();
+
 app.Run();

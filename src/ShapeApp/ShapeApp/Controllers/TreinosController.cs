@@ -14,7 +14,9 @@ namespace ShapeApp.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var dados = await _context.Treinos.ToListAsync();
+            var dados = await _context.Treinos
+                .Include(treino => treino.Exercicios)
+                .ToListAsync();
 
             return View(dados);
         }
@@ -29,7 +31,19 @@ namespace ShapeApp.Controllers
         {
             if (ModelState.IsValid)
             {
+                var exercicios = await _context.Exercicios.ToListAsync();
+
+                var quantidade = new Random().Next(4, exercicios.Count);
+
+                for (int i = 0; i < quantidade; i++)
+                {
+                    var exercicio = exercicios[new Random().Next(0, exercicios.Count)];
+                    treino.Exercicios.Add(exercicio);
+                }
+
                 _context.Treinos.Add(treino);
+
+
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
@@ -38,7 +52,7 @@ namespace ShapeApp.Controllers
 
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null) 
+            if (id == null)
                 return NotFound();
             var dados = await _context.Treinos.FindAsync(id);
 
@@ -56,7 +70,7 @@ namespace ShapeApp.Controllers
 
             if (ModelState.IsValid)
             {
-               _context.Treinos.Update(treino);
+                _context.Treinos.Update(treino);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
@@ -64,18 +78,19 @@ namespace ShapeApp.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Details(int? id) 
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
                 return NotFound();
 
             var dados = await _context.Treinos.FindAsync(id);
 
-            if(dados == null)
+            if (dados == null)
                 return NotFound();
 
             return View(dados);
         }
+
 
         public async Task<IActionResult> Delete(int? id)
         {
@@ -105,6 +120,61 @@ namespace ShapeApp.Controllers
             await _context.SaveChangesAsync();
 
             return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> Exercicios(int? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            var dados = await _context.Treinos.Include(t => t.Exercicios).FirstOrDefaultAsync(t => t.Id == id);
+
+            if (dados == null)
+                return NotFound();
+
+            return View(dados);
+        }
+
+        public async Task<IActionResult> RemoverExercicio(int id, int exericioid)
+        {
+            // Busca o Treino com o ID
+            var dados = await _context.Treinos.Include(t => t.Exercicios).FirstOrDefaultAsync(t => t.Id == id);
+
+            // Busca o Exericio dentro do treino ID cujo exercicio seja o exericicioid
+            var exericio = dados.Exercicios.FirstOrDefault(e => e.Id == exericioid);
+
+            // remove o exercicio da lista para aquele treino ID
+            dados.Exercicios.Remove(exericio);
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Exercicios", new { id = id });
+        }
+
+        public async Task<IActionResult> AddExercicio(int? id)
+        {
+            var dados = await _context.Treinos.Include(t => t.Exercicios).FirstOrDefaultAsync(t => t.Id == id);
+
+            // Lista todos os exercícios
+            var exercicios = await _context.Exercicios.ToListAsync();
+
+            ViewBag.Exercicios = exercicios;
+
+            return View(dados);
+        }
+
+        public async Task<IActionResult> VincularExercicio(int id, int exercicioId)
+        {
+
+            var exercicio = await _context.Exercicios.FindAsync(exercicioId);
+
+            var treino = await _context.Treinos.Include(t => t.Exercicios).FirstOrDefaultAsync(t => t.Id == id);
+
+            treino.Exercicios.Add(exercicio);
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Exercicios", new { id = id });
         }
     }
 }

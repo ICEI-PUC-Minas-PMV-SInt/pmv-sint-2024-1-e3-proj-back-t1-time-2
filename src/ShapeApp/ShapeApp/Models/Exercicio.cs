@@ -18,5 +18,7 @@ namespace ShapeApp.Models
         [Required(ErrorMessage = "Obrigatório informar o número de repetições!")]
         [Display(Name = "Repetições")]
         public int Repeticoes { get; set; }
+
+        public List<Treino> Treinos { get; set; }
     }
 }

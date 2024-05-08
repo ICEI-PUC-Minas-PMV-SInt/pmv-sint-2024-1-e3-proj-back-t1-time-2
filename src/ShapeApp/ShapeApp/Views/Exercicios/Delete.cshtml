@@ -1,0 +1,39 @@
+﻿@model ShapeApp.Models.Exercicio
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Remover Exercício</h1>
+
+<h3>Você tem certeza que deseja remover este registro?</h3>
+<div>
+    <h4>Exercício</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Series)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Series)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Repeticoes)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Repeticoes)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <a asp-action="Index" class="btn btn-info">Voltar</a> |
+        <input type="submit" value="Apagar" class="btn btn-danger" /> 
+    </form>
+</div>

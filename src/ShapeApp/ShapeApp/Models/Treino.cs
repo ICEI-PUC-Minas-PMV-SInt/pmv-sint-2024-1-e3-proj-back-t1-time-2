@@ -16,7 +16,7 @@ namespace ShapeApp.Models
 
         [Display(Name = "Duração de Treino")]
         public string DuracaoRecomendada { get; set; }
-        
-        public List<Exercicio> Exercicios { get; set; }
+
+        public List<Exercicio> Exercicios { get; set; } = new();
     }
 }
