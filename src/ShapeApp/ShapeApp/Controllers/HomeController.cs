@@ -2,6 +2,7 @@ using System.Data;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using ShapeApp.Models;
 
 namespace ShapeApp.Controllers
@@ -15,11 +16,14 @@ namespace ShapeApp.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var dados = _context.MensagensHome;
+            var dados = await _context.MensagensHome.ToListAsync();
 
-            return View(dados);
+            Random random = new Random();
+            var numAleatorio = random.Next(0, dados.Count);
+
+            return View(dados.IsNullOrEmpty() ? new MensagensHome() : dados[numAleatorio]);
         }
 
     }

@@ -9,5 +9,9 @@ namespace ShapeApp.Models
         public DbSet<Treino> Treinos { get; set; }
 
         public DbSet<Exercicio> Exercicios { get; set;}
+
+        public DbSet<MensagensHome> MensagensHome { get; set; }
+
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 }

@@ -9,10 +9,7 @@
     <h1 class="display-4">ShapeApp</h1>
 
     <p>A mensagem é:</p>
-    @{
-        Random random = new Random();
-        var numAleatorio = random.Next(0, 10);
-    }
-    <p>@Model.Mensagem[numAleatorio]</p>
+    
+    <p>@Model.Mensagem</p>
 
 </div>
