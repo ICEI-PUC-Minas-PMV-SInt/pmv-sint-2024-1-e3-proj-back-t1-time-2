@@ -1,5 +1,4 @@
--- População das tabelas
-
+-- Populando as tabelas
 insert into Usuario (Id_Usuario, Senha, Usuario)
 values 
 (1, "123456", "Usuario 1"), 
@@ -14,12 +13,34 @@ values
 (3, 3, "Maria da Luz","1990-03-7"),
 (4, 4, "Sandra Pereira","1979-10-29");
 
-insert into Perfil (Id_Pefil, Id_Pessoa, Idade, Altura, Peso, Nivel)
+insert into Perfil (Id_Perfil, Id_Pessoa, Idade, Altura, Peso, Nivel)
 values
 (1, 1, 42, 1.82, 86.9, "Iniciante"),
 (2, 2, 37, 1.80, 75.6, "Intermediario"),
 (3, 3, 34, 1.67, 67.0, "Iniciante"),
 (4, 4, 44, 1.62, 59.0, "Iniciante");
+
+insert into Exercicio values
+(1, "Elevacao lateral", 3, 12),
+(2, "Remada sentada", 4, 8 ),
+(3, "Puxada alta na polia", 3, 10 ),
+(4, "Rosca com hateres no banco inclinado", 2, 20 ),
+(5, "Elevacao da panturrilha", 3, 10),
+(6, "Flexao prenas", 4, 8 ),
+(7, "Extensao pernas", 4, 10 ),
+(8, "Supino com barra", 3, 12),
+(9, "Elevacoes laterais com halteres", 3, 8);
+
+insert into Treino values
+(1, "2024-05-01", "Ganhar massa muscular", "3 meses", 1),
+(2, "2024-05-05", "Perder peso", "2 meses", 2);
+
+-- random = floor(pmin+RAND()*(pmax-pmin))
+insert into Treino_Exercicio values
+(1, floor(RAND()*9)),
+(1, floor(RAND()*9)),
+(1, floor(RAND()*9));
+
 
 -- Buscar um usuario na tela de login
 select Id_Usuario, senha, usuario
@@ -38,35 +59,6 @@ from Perfil
 inner join Pessoa on Perfil.Id_Pessoa = Pessoa.Id_Pessoa
 where Perfil.Id_Perfil = 1;
 
--- Mostrar todas as recomendações/exercícios para uma pessoa
-select Pessoa.Id_Usuario,
- Pessoa.Id_Pessoa,
- Pessoa.Nome,
- DataNascimento,
- Perfil.Id_Perfil,
- Idade,
- Altura,
- Peso,
- Nivel,
- Recomendacao.Id_Recomendacao,
- ItemTreino.Id_ItemTreino,
- Exercicio.Id_Exercicio,
- Exercicio.Nome,
- Descricao,
- Classificacao,
- GrupoMuscular,
- Mecanica,
- Repeticoes,
- Series
-from Recomendacao
-inner join Recomendacao_ItemTreino on Recomendacao.Id_Recomendacao = Recomendacao_ItemTreino.Id_Recomendacao
-inner join Perfil on Perfil.Id_Perfil = Recomendacao.Id_Perfil
-inner join Pessoa on Pessoa.Id_Pessoa = Perfil.Id_Pessoa
-inner join Usuario on Usuario.Id_Usuario = Pessoa.Id_Usuario
-inner join ItemTreino on ItemTreino.Id_ItemTreino = Recomendacao_ItemTreino.Id_ItemTreino
-inner join Exercicio on Exercicio.Id_Exercicio = ItemTreino.Id_Exercicio
-where Usuario.Usuario = "Usuario 1";
-
 -- Mostrar todos os treino/exercícios para uma pessoa
 select Pessoa.Id_Usuario,
  Pessoa.Id_Pessoa,
@@ -78,20 +70,17 @@ select Pessoa.Id_Usuario,
  Peso,
  Nivel,
  Treino.Id_Treino,
- ItemTreino.Id_ItemTreino,
+ DataInicio,
+ Objetivo,
+ DuracaoTreino,
  Exercicio.Id_Exercicio,
  Exercicio.Nome,
- Descricao,
- Classificacao,
- GrupoMuscular,
- Mecanica,
- Repeticoes,
- Series
-from Treino
-inner join Treino_ItemTreino on Treino.Id_Treino = Treino_ItemTreino.Id_Treino
+ Series,
+ Repeticoes
+from Treino_Exercicio
+inner join Treino on Treino.Id_Treino = Treino_Exercicio.Id_Treino
+inner join Exercicio on Exercicio.Id_Exercicio = Treino_Exercicio.Id_Exercicio
 inner join Perfil on Treino.Id_Perfil = Perfil.Id_Perfil
-inner join  Pessoa on Pessoa.Id_Pessoa = Perfil.Id_Pessoa
+inner join Pessoa on Pessoa.Id_Pessoa = Perfil.Id_Pessoa
 inner join Usuario on Usuario.Id_Usuario = Pessoa.Id_Usuario
-inner join ItemTreino on ItemTreino.Id_ItemTreino = Treino_ItemTreino.Id_ItemTreino
-inner join Exercicio on Exercicio.Id_Exercicio = ItemTreino.Id_Exercicio
-where Usuario.Usuario = "Usuario 2";
+where Usuario.Usuario = "Usuario 1";

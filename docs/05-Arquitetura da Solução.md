@@ -12,12 +12,9 @@ Definição de como o software é estruturado em termos dos componentes que faze
 classDiagram
 
   Pessoa "1" -- "1" Usuario
-  Pessoa "1" -- "1..*" Perfil
-  Perfil "1" -- "1" Treino
-  Perfil "1" -- "1..*" Recomendacao
-  Recomendacao "1" -- "1..*" Exercicio
-  Treino "1" -- "1..*" ItemTreino
-  ItemTreino "1" -- "1" Exercicio
+  Pessoa "1" -- "1" Perfil
+  Perfil "1" -- "1..*" Treino
+  Treino "1" -- "1..*" Exercicio
 
   class Pessoa{
     -Usuario usuario
@@ -68,41 +65,31 @@ classDiagram
   }
 
   class Treino{
-    -List~ItemTreino~itens
-    +addItemTreino(item)
-    +getItens() ItemTreino
+    -List~Exercicios~itens
+    +addExercicio(item)
+    +getItens() exercicio
+    
 
-  }
-
-  class Recomendacao{
-    -List~Exercicio~ exercicios
-    +addExercicio(exercicio)
-    +getExercicios() List~Exercicio~
   }
 
   class Exercicio{
-    -string descricao
-    -string grupoMuscular
-    +getDescricao() string
-    +getGrupoMuscular() string
-    +setDescricao(string descricao)
-    +setGrupoMuscular(string grupoMuscular)
+    -string nome
+    -string objetivo
+    -int series
+    -int repeticoes
+    +getNome() string
+    +getObjetivo() string
+    +getSeries() int
+    +getRepeticoes() int
+    +setNome(string nome)
+    +setObjetivo(string objetivo)
+    +setSeries(int series)
+    +setRepeticoes(int repeticoes)
   }
 
-  class ItemTreino{
-    -int repeticoes
-    -int series
-    -Exercicio exercicio
-    +getRepeticoes() int
-    +setRepeticoes(int repeticoes)
-    +getSeries() int
-    +setSeries(int series)
-    +getExercicio() Exercicio
-    +setExercicio(Exercicio exercicio)
-  }
 ```
 
-Para utilizar o sistema um usuário precisa de credenciais que serão gerenciadas pelo **Usuário**. Após fazer o login, ele irá completar o cadastro com seu nome e senha, essas informações irão compor a classe **PESSOA**. Para acessar a lista de exercícios, o usuário deverá preencher o seu **PERFIL** com peso, altura e idade, dessa forma o app irá fazer a **RECOMENDAÇÃO** de uma lista de **EXERCÍCIOS** que ele poderá personalizar e obter o **TREINO**. Para alterar o treino é necessário atualizar o perfil.
+Para utilizar o sistema um usuário precisa de credenciais que serão gerenciadas pelo **Usuário**. Após fazer o login, ele irá completar o cadastro com seu nome e senha, essas informações irão compor a classe **PESSOA**. Para acessar a lista de exercícios, o usuário deverá preencher o seu **PERFIL** com peso, altura e idade, dessa forma o app irá fazer a recomendação de uma lista de **EXERCÍCIOS** que ele poderá personalizar e obter o **TREINO**.
 
 ---
 
