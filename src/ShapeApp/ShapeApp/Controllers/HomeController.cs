@@ -17,7 +17,7 @@ namespace ShapeApp.Controllers
 
         public IActionResult Index()
         {
-            var dados = _context.MensagensHome.ToList();
+            var dados = _context.MensagensHome;
 
             return View(dados);
         }
