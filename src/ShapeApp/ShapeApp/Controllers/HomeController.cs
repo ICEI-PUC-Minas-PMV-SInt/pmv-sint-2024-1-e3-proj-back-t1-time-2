@@ -26,5 +26,41 @@ namespace ShapeApp.Controllers
             return View(dados.IsNullOrEmpty() ? new MensagensHome() : dados[numAleatorio]);
         }
 
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(MensagensHome mensagensHome)
+        {
+            if(ModelState.IsValid)
+            {
+                _context.MensagensHome.Add(mensagensHome);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(mensagensHome);
+        }
+
+        //CRIAR UMA SEGUNDA INDEX PARA EXIBIÇÃO DAS MENSAGENS EM LISTA, PARA ENTÃO ADICIONAR OS RECURSOS DE EDIT, DETAILS E DELETE
+
+        //public IActionResult Edit(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return View();
+        //}
+
+        //[HttpPost]
+        //public IActionResult Edit()
+        //{
+        //    return View();
+        //}
+
     }
 }
