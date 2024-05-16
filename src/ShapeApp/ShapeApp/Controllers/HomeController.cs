@@ -16,9 +16,9 @@ namespace ShapeApp.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            var dados = await _context.MensagensHome.ToListAsync();
+            var dados = _context.MensagensHome.ToList();
 
             Random random = new Random();
             var numAleatorio = random.Next(0, dados.Count);
@@ -44,23 +44,97 @@ namespace ShapeApp.Controllers
             return View(mensagensHome);
         }
 
-        //CRIAR UMA SEGUNDA INDEX PARA EXIBIÇÃO DAS MENSAGENS EM LISTA, PARA ENTÃO ADICIONAR OS RECURSOS DE EDIT, DETAILS E DELETE
+        public IActionResult EdicaoMensagens()
+        {
+            var dados = _context.MensagensHome.ToList();
+            return View(dados);
+        }
 
-        //public IActionResult Edit(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
+        public IActionResult Edit(int? id)
+        {
+            if(id == null)
+            {
+                return NotFound();
+            }
 
-        //    return View();
-        //}
+            var dados = _context.MensagensHome.Find(id);
+            if(dados == null)
+            {
+                return NotFound();
+            }
 
-        //[HttpPost]
-        //public IActionResult Edit()
-        //{
-        //    return View();
-        //}
+            return View(dados);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(int id, MensagensHome mensagensHome)
+        {
+            if(id != mensagensHome.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                _context.MensagensHome.Update(mensagensHome);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View();
+        }
+
+        public IActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var dados = _context.MensagensHome.Find(id);
+            if (dados == null)
+            {
+                return NotFound();
+            }
+
+            return View(dados);
+        }
+
+        public IActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var dados = _context.MensagensHome.Find(id);
+            if (dados == null)
+            {
+                return NotFound();
+            }
+
+            return View(dados);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirmed(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var dados = _context.MensagensHome.Find(id);
+            if (dados == null)
+            {
+                return NotFound();
+            }
+
+            _context.MensagensHome.Remove(dados);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
 
     }
 }
