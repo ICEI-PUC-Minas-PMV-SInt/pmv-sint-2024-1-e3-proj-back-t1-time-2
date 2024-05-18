@@ -1,41 +1,66 @@
-﻿@model IEnumerable<ShapeApp.Models.Usuario>
+﻿@model IEnumerable<ShapeApp.Models.DadosCadastro>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Usuarios";
 }
 
-<h1>Index</h1>
+<h1>Gerenciamento de usuarios</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-success">Cadastro de novo usuario</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Nome)
+                @Html.DisplayNameFor(model => model.Usuario.Nome)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Perfil)
+                @Html.DisplayNameFor(model => model.Usuario.Perfil)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PerfilShape.Idade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PerfilShape.Altura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PerfilShape.Peso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PerfilShape.Nivel)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Perfil)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Usuario.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Usuario.Perfil)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PerfilShape.Idade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PerfilShape.Altura)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PerfilShape.Peso)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PerfilShape.Nivel)
+                </td>
+                <td>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Usuario.Id">Editar</a> |
+                    <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Usuario.Id">Visualizar</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Usuario.Id">Apagar</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

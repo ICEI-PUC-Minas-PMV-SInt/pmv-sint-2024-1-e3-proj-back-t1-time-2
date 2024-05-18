@@ -1,14 +1,14 @@
 ﻿@model ShapeApp.Models.DadosCadastro
 
 @{
-    ViewData["Title"] = "Atualização de Usuario";
+    ViewData["Title"] = "Atualização de perfil";
 }
 
-<h1>Atualização de Usuario</h1>
+<h1>Atualização de perfil</h1>
 
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Index">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Usuario.Id" />
             <div class="form-group">
@@ -48,11 +48,13 @@
             </div>
             <br>
             <div class="form-group">
-                <input type="submit" value="Salvar" class="btn btn-success" /> |
-                <a asp-action="Index" class="btn btn-info">Voltar</a>
+                <input type="submit" value="Salvar" class="btn btn-success" />
             </div>
         </form>
     </div>
+</div>
+
+<div>
 </div>
 
 @section Scripts {

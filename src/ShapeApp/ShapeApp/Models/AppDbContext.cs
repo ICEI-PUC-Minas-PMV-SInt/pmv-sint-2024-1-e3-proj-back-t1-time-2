@@ -13,5 +13,8 @@ namespace ShapeApp.Models
         public DbSet<MensagensHome> MensagensHome { get; set; }
 
         public DbSet<Usuario> Usuarios { get; set; }
+
+        public DbSet<PerfilShape> PerfilShape { get; set; }
+
     }
 }

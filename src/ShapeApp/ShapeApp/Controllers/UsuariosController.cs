@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
+﻿using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
 using ShapeApp.Models;
 
@@ -25,7 +18,24 @@ namespace ShapeApp.Controllers
         // GET: Usuarios
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Usuarios.ToListAsync());
+            var listaUsuarios = await _context.Usuarios.ToListAsync();
+
+            var ListaPerfilShape = await _context.PerfilShape.ToListAsync();
+
+            List<DadosCadastro> listaDadosCadastro = new List<DadosCadastro>();
+
+            foreach (Usuario usuario in listaUsuarios)
+            {
+                listaDadosCadastro.Add(
+                    new DadosCadastro
+                    {
+                        Usuario = usuario,
+                        PerfilShape = ListaPerfilShape.Find(x => x.UsuarioId == usuario.Id)
+                    }
+                );
+            }
+
+            return View(listaDadosCadastro);
         }
         public IActionResult Login()
         {
@@ -76,9 +86,9 @@ namespace ShapeApp.Controllers
         }
         public async Task<IActionResult> Logout()
         {
-        await HttpContext.SignOutAsync();
+            await HttpContext.SignOutAsync();
 
-        return RedirectToAction("Login", "Usuarios");
+            return RedirectToAction("Login", "Usuarios");
 
         }
 
@@ -92,12 +102,21 @@ namespace ShapeApp.Controllers
 
             var usuario = await _context.Usuarios
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (usuario == null)
             {
                 return NotFound();
             }
 
-            return View(usuario);
+            var perfilShape = await _context.PerfilShape
+                .FirstOrDefaultAsync(m => m.IdPerfil == id);
+
+            if (perfilShape == null)
+            {
+                return NotFound();
+            }
+
+            return View(new DadosCadastro { Usuario = usuario, PerfilShape = perfilShape });
         }
 
         // GET: Usuarios/Create
@@ -111,22 +130,27 @@ namespace ShapeApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Senha,Perfil")] Usuario usuario)
+        public async Task<IActionResult> Create([Bind("Usuario,PerfilShape")] DadosCadastro dadosCadastro)
         {
             if (ModelState.IsValid)
             {
-                usuario.Senha = BCrypt.Net.BCrypt.HashPassword(usuario.Senha);
-                _context.Add(usuario);
+                dadosCadastro.Usuario.Senha = BCrypt.Net.BCrypt.HashPassword(dadosCadastro.Usuario.Senha);
+                _context.Add(dadosCadastro.Usuario);
                 await _context.SaveChangesAsync();
+
+                dadosCadastro.PerfilShape.UsuarioId = dadosCadastro.Usuario.Id;
+                _context.Add(dadosCadastro.PerfilShape);
+                await _context.SaveChangesAsync();
+
                 return RedirectToAction(nameof(Index));
             }
-            return View(usuario);
+            return View();
         }
 
-        // GET: Usuarios/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
+
+            if (id == null || _context.Usuarios == null)
             {
                 return NotFound();
             }
@@ -136,32 +160,46 @@ namespace ShapeApp.Controllers
             {
                 return NotFound();
             }
-            return View(usuario);
-        }
 
-        // POST: Usuarios/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Senha,Perfil")] Usuario usuario)
-        {
-            if (id != usuario.Id)
+            var perfilShape = await _context.PerfilShape.FindAsync(id);
+            if (perfilShape == null)
             {
                 return NotFound();
             }
 
+            var dadosCadastro = new DadosCadastro
+            {
+                Usuario = usuario,
+                PerfilShape = perfilShape
+            };
+
+            return View(dadosCadastro);
+
+        }
+
+        // POST: Perfil
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit([Bind("Usuario,PerfilShape")] DadosCadastro dadosCadastro)
+        {
             if (ModelState.IsValid)
             {
                 try
-            {
-                    usuario.Senha = BCrypt.Net.BCrypt.HashPassword(usuario.Senha);
-                    _context.Update(usuario);
+                {
+                    dadosCadastro.Usuario.Senha = BCrypt.Net.BCrypt.HashPassword(dadosCadastro.Usuario.Senha);
+                    _context.Usuarios.Update(dadosCadastro.Usuario);
+                    await _context.SaveChangesAsync();
+
+                    dadosCadastro.PerfilShape.IdPerfil = dadosCadastro.Usuario.Id;
+                    dadosCadastro.PerfilShape.UsuarioId = dadosCadastro.Usuario.Id;
+                    _context.PerfilShape.Update(dadosCadastro.PerfilShape);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!UsuarioExists(usuario.Id))
+                    if (!UsuarioExists(dadosCadastro.Usuario.Id))
                     {
                         return NotFound();
                     }
@@ -172,7 +210,8 @@ namespace ShapeApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(usuario);
+
+            return View(dadosCadastro);
         }
 
         // GET: Usuarios/Delete/5
@@ -185,12 +224,21 @@ namespace ShapeApp.Controllers
 
             var usuario = await _context.Usuarios
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (usuario == null)
             {
                 return NotFound();
             }
 
-            return View(usuario);
+            var perfilShape = await _context.PerfilShape
+                .FirstOrDefaultAsync(m => m.IdPerfil == id);
+
+            if (perfilShape == null)
+            {
+                return NotFound();
+            }
+
+            return View(new DadosCadastro { Usuario = usuario, PerfilShape = perfilShape });
         }
 
         // POST: Usuarios/Delete/5
@@ -203,8 +251,15 @@ namespace ShapeApp.Controllers
             {
                 _context.Usuarios.Remove(usuario);
             }
-
             await _context.SaveChangesAsync();
+
+            var perfilShape = await _context.PerfilShape.FindAsync(id);
+            if (perfilShape != null)
+            {
+                _context.PerfilShape.Remove(perfilShape);
+            }
+            await _context.SaveChangesAsync();
+
             return RedirectToAction(nameof(Index));
         }
 
