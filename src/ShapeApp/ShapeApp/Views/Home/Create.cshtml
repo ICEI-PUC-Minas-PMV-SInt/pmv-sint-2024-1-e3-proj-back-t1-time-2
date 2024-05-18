@@ -1,0 +1,40 @@
+﻿@model ShapeApp.Models.MensagensHome
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Criar Mensagens</h1>
+
+<h4>Crie novas mensagens motivacionais aleatórias para aparecer na home</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TituloMensagem" class="control-label"></label>
+                <input asp-for="TituloMensagem" class="form-control" />
+                <span asp-validation-for="TituloMensagem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mensagem" class="control-label"></label>
+                <input asp-for="Mensagem" class="form-control" />
+                <span asp-validation-for="Mensagem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <br />
+                <a class="btn btn-primary" asp-action="Index">Voltar</a>
+                <input type="submit" value="Criar" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+    
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

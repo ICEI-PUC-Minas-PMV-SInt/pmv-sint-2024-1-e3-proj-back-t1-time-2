@@ -164,7 +164,7 @@ Estes itens apresentados acima representam um modelo de domínio básico e conce
 
 O Modelo de Entidade e Relacionamento representa a estrutura dos dados no BD.
 
-<img src="img/mer.png" width="700"/>
+<img src="img/Diagrama MER.png" width="700"/>
 
 ## Esquema Relacional
 

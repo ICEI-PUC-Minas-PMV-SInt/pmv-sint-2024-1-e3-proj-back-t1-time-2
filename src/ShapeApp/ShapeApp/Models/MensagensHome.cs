@@ -10,6 +10,7 @@ namespace ShapeApp.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Título da mensagem é obrigatório")]
+        [Display(Name = "Título da Mensagem")]
         public string TituloMensagem { get; set; }
 
         [Required(ErrorMessage = "É obrigatório informar uma mensagem a ser cadastrada")]
