@@ -35,7 +35,7 @@ namespace ShapeApp.Controllers
             {
                 var exercicios = await _context.Exercicios.ToListAsync();
 
-                var quantidade = new Random().Next(4, exercicios.Count);
+                var quantidade = new Random().Next(Math.Min(4, exercicios.Count), exercicios.Count);
 
                 for (int i = 0; i < quantidade; i++)
                 {
