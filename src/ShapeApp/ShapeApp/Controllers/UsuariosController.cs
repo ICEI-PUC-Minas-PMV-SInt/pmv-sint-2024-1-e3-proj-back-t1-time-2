@@ -133,6 +133,7 @@ namespace ShapeApp.Controllers
         }
 
         // GET: Usuarios/Create
+        [AllowAnonymous]
         public IActionResult Create()
         {
             return View();
@@ -143,6 +144,7 @@ namespace ShapeApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public async Task<IActionResult> Create([Bind("Usuario,PerfilShape")] DadosCadastro dadosCadastro)
         {
             if (ModelState.IsValid)
