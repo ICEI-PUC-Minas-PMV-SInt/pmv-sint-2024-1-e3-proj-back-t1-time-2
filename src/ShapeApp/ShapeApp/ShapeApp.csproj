@@ -31,6 +31,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\logo-shapeapp-menu.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Update="Views\Treinos\Index.cshtml">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
