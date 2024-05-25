@@ -135,3 +135,23 @@ A eficiência no desenvolvimento da Aplicação Web Shape App é alcançada atra
 4. **Comunicação em Grupo:**
    - A comunicação contínua e eficaz é mantida com o uso do **WhatsApp** para troca de informações rápidas e resolução de dúvidas. Para reuniões de alinhamento e discussões mais aprofundadas, utilizamos o **Microsoft Teams**, que também suporta chamadas de vídeo e compartilhamento de tela para colaboração em tempo real.
 
+# Avaliação do Framework ASP.NET Core MVC
+
+O ASP.NET Core MVC é uma estrutura de software livre, de multiplataforma e alto desempenho para criação de aplicativos Web e APIs conectados à internet e baseados em nuvens que oferece várias vantagens significativas para o seu uso. Dentre elas estão:
+
+- **Injeção de dependências**: Injeção de dependência nativa mantêm o baixo acoplamento entre os módulos que torna o código mais organizado, testável e de fácil manutenção.
+- **Separação de responsabilidade**: O padrão MVC divide a aplicação em Model, View e Controller, isso facilita a manutenção, o teste e a escalabilidade do código. Também acelera o processo de desenvolvimento, uma vez que permite que o desenvolvedor trabalhe com Front-end e Back-end em paralelo.
+- **Flexibilidade**: O framework oferece maior controle sobre o fluxo de dados e a lógica da aplicação, sendo mais flexível para criar aplicativos da WEB simples ou complexos, conforme a necessidade do desenvolvedor.
+- **Integração com bibliotecas JavaScript**: permite a integração com bibliotecas JavaScript para melhorar a experiência do usuário.
+- **HTML gerado separadamente**: O HTML enviado para o navegador é gerado por um mecanismo separado e substituível facilitando a personalização e a otimização da renderização da página.
+  
+ Embora o ASP.NET Core MVC seja uma estrutura poderosa, está framework apresenta algumas desvantagens como:
+
+- **Configuração do Controlador**:  a configuração dos controladores é feita nas rotas raiz, podendo tornar o processo frágil e menos eficiente em comparação com outras estruturas MVC, já que o roteamento baseado em texto pode causar problemas e afetar o desempenho.
+- **Dificuldades de Compatibilidade e Integração com Bibliotecas JavaScript**: o framework pode ter dificuldades ao integrar com bibliotecas JavaScript, pois a compatibilidade e a integração podem ser mais complexas em comparação com outras estruturas.
+- **Aprendizado e Recursos em inglês**: por ser uma estrutura relativamente nova muitos recursos de aprendizado estão disponíveis principalmente em inglês, isso pode ser um desafio para desenvolvedores que não possuem o domínio do idioma.
+- **Funcionalidades Limitadas em Comparação com Serviços Web Completos**: por não oferecer todas as funcionalidades de um serviço da web completo, como o IIS, alguns recursos, como compartilhamento de porta, configuração fácil de SSL e reescrita de URL, não estão disponíveis nativamente.
+
+Logo, o ASP.NET Core MVC é uma estrutura leve, modular e altamente testável, que oferece uma maneira baseada em padrões para criar aplicativos da web e APIs com uma separação clara de responsabilidades, todavia apresenta algumas desvantagens que precisam ser consideradas ao escolher a melhor abordagem para um projeto.
+
+
