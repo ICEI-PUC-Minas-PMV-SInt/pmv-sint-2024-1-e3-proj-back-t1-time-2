@@ -11,10 +11,23 @@
     <br />
     
     <p style="font-size: 20px">
+        @if (Model.Mensagem == null)
+        {
+            <i style="font-size: 16px; line-height: normal">Aqui o sistema busca de forma aleatória mensagens motivacionais cadastradas no BD. <br /> <b>Não há mensagens cadastradas,</b> apenas <b>Administradores</b> podem cadastrar ou editar mensagens.</i>
+        }
+        else
+        { 
         <strong><i>@Model.Mensagem</i></strong>
+        }
     </p>
 
-    <a class="btn btn-success" asp-controller="Home" asp-action="Create">Criar novas mensagens</a>
-    <a class="btn btn-primary" asp-controller="Home" asp-action="EdicaoMensagens">Edite as mensagens</a>
+    @if (User.IsInRole("Admin"))
+    {
+        <br />
+        <a class="btn btn-success" asp-controller="Home" asp-action="Create">Criar novas mensagens</a>
+        <a class="btn btn-primary" asp-controller="Home" asp-action="EdicaoMensagens">Edite as mensagens</a>
+    }
+
+
 
 </div>

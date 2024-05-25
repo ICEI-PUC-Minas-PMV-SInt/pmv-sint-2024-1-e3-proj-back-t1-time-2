@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ShapeApp.Models;
 
 namespace ShapeApp.Controllers
 {
+    [Authorize]
     public class TreinosController : Controller
     {
         private readonly AppDbContext _context;

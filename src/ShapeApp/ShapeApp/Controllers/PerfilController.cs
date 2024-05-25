@@ -1,10 +1,12 @@
 ﻿using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ShapeApp.Models;
 
 namespace ShapeApp.Controllers
 {
+    [Authorize]
     public class PerfilController : Controller
     {
         private readonly AppDbContext _context;

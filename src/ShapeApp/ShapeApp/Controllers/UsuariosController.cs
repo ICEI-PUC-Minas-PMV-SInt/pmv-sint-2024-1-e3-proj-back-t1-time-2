@@ -1,11 +1,13 @@
 ﻿using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ShapeApp.Models;
 
 namespace ShapeApp.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class UsuariosController : Controller
     {
         private readonly AppDbContext _context;
@@ -37,11 +39,21 @@ namespace ShapeApp.Controllers
 
             return View(listaDadosCadastro);
         }
+
+        [AllowAnonymous]
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
+
+        [AllowAnonymous]
         public IActionResult Login()
         {
             return View();
         }
+
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> Login(Usuario usuario)
         {
             var dados = await _context.Usuarios
@@ -84,6 +96,7 @@ namespace ShapeApp.Controllers
             }
             return View();
         }
+        [AllowAnonymous]
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync();

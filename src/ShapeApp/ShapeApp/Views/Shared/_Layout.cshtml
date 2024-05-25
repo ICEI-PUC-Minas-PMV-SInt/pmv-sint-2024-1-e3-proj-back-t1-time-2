@@ -40,9 +40,13 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Compartilhamento" asp-action="Index">Compartilhamento</a>
                         </li> *@
                         
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios" asp-action="Index">Usuarios</a>
-                        </li>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios" asp-action="Index">Usuarios</a>
+                            </li>
+                        }
+
                     </ul>
                     <ul class="navbar-nav">
 
