@@ -14,17 +14,15 @@ Para realizar os testes, utilizaremos as seguintes ferramentas e tecnologias:
 
 - **Google Forms:** Utilizaremos o google forms para criar questionários de satisfação do usuário e recolher feedback de possíveis melhorias.
   
-- **Hotjar:** Faremos uso do Hotjar para mapear os pontos de maior e menor interação dos usuários na aplicação.
-  
 - **10 heurísticas de Nielsen:** Realizaremos o uso do padrão das 10 Heurísticas de Nielsen para avaliar a qualidade da usabilidade da aplicação.
 
 ## Casos de Testes
 Para os seguintes casos de teste:
 - **Casos de Teste para U-001:** Validar a usabilidade do fluxo de login da aplicação.
+- **Casos de Teste para U-002:** Validar a usabilidade do funcionalidade "Home" da aplicação.
 - **Casos de Teste para U-002:** Validar a usabilidade do funcionalidade "Meus Treinos" da aplicação.
-- **Casos de Teste para U-003:** Validar a usabilidade do funcionalidade "Frequência na academia" da aplicação.
-- **Casos de Teste para U-004:** Validar a usabilidade do funcionalidade "Compartilhamento" da aplicação.
-- **Casos de Teste para U-005:** Validar a usabilidade do funcionalidade "Atualização de perfil" da aplicação.
+- **Casos de Teste para U-002:** Validar a usabilidade do funcionalidade "Perfil" da aplicação.
+- **Casos de Teste para U-005:** Validar a usabilidade do funcionalidade "Usuarios" da aplicação.
  
 Serão avaliados os aspectos de:
 
@@ -33,9 +31,6 @@ Serão avaliados os aspectos de:
 - **Clareza das informações:** Determinar se as informações apresentadas na interface são compreensíveis para os usuários e se estão organizadas de forma lógica e intuitiva.
 
 - **Eficiência das interações:** Definir se os usuários conseguem concluir as tarefas de forma eficiente, sem encontrar obstáculos desnecessários.
-
-- **Experiência do usuário:** Avaliar a satisfação geral do usuário ao interagir com a aplicação, incluindo aspectos como estética, facilidade de uso e resposta do sistema.
-
 
 ## Links Úteis
 
