@@ -135,6 +135,14 @@ Ao planejar os testes do backend do sistema Shape, é importante considerar os s
 - **E** clica no botão de atualizar perfil
 - **Então** as informações do perfil devem ser atualizadas corretamente
 
+### Casos de Teste para RF-003: Permitir que os usuários personalizem suas próprias rotinas de treinamento
+
+#### Caso de Teste 1: Criação bem-sucedida de uma rotina personalizada
+- **Dado que** o usuário acessa a página de criação de rotina
+- **Quando** ele seleciona exercícios específicos e ajusta a intensidade de acordo com suas preferências
+- **E** salva a rotina
+- **Então** a aplicação deve salvar a rotina personalizada com sucesso e torná-la disponível para o usuário
+
 ### Casos de Teste para RNF-001: A aplicação deve ser responsiva e responder às ações do usuário em no máximo 2s
 
 #### Caso de Teste 1: Responsividade da aplicação durante a navegação
