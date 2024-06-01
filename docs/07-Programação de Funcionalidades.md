@@ -50,6 +50,38 @@ Ao clicar no botão "Edite as Mensagens" o usuário Administrador pode verificar
 
 <img width="600px" src="img/edicao-mensagens-home.png">
 
+### Aluna Isabella
+
+Responsável pelo desenvolvimento das páginas **Exercícios** e **Meus treinos**. 
+
+ - **Página Exercícios**: Somente o administrador tem acesso à essa página. Nela ele pode adicionar exercícios que serão incluídos de forma aleatória nos treinos dos usuários. Também é possível visualizar os exercícios já existentes, editá-los ou excluí-los. Apresenta CRUD completo (adicionar, visualizar, editar e apagar).
+  
+  <img width="600px" src="img/ListaExercicios1.png">
+
+   <img width="600px" src="img/AdicionarExercicio.png">
+
+  <img width="600px" src="img/VisualizarExercicio.png">
+
+  <img width="600px" src="img/EditarExercicio.png">
+
+  <img width="600px" src="img/RemoverExercicio.png">
+
+ - **Página Meus Treinos**: Nessa página o usuário pode criar o seu treino. No CRUD da página, além das funções adicionar, editar e excluir, existe um botão visualizar execícios, ao clicar nele o usuário é direcionado para uma página que contém uma lista de exercícios (que foram adicionados de forma aleatória), nessa página ele pode adicionar novos exercícios ou excluir os que ele desejar. Ao clicar em adicionar exercícios, uma lista de exercícios é aberta, para adicionar basta clicar no botão adicionar localizado na frente de cada exercício.
+
+<img width="600px" src="img/MeusTreinos.png"> 
+
+<img width="600px" src="img/AdicionarTreino.png">
+
+<img width="600px" src="img/VisualizarTreino.png">
+
+<img width="600px" src="img/EditarTreino.png">
+
+<img width="600px" src="img/RemoverTreino.png">
+
+<img width="600px" src="img/TreinoListaExercicios.png">
+
+<img width="600px" src="img/ListaExercicios.png">
+
 ## Aplicação dos Padrões de Projeto
 
 A aplicação ShapeApp utiliza o padrão de desenvolvimento MVC, que por si só aplica em sua lógica de funcionalidades padrões Grasp.
