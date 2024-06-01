@@ -1,10 +1,6 @@
 # Programação de Funcionalidades
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>, <a href="4-Metodologia.md"> Metodologia</a>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>, <a href="5-Arquitetura da Solução.md"> Arquitetura da Solução</a>
-
-Implementação do sistema descritas por meio dos requisitos funcionais e/ou não funcionais. Deve relacionar os requisitos atendidos os artefatos criados (código fonte) além das estruturas de dados utilizadas e as instruções para acesso e verificação da implementação que deve estar funcional no ambiente de hospedagem.
-
-## Detalhamento das funcionalidades desenvolvidas durante o microfundamento Desenvolvimento Web Backend:
+## Detalhamento das funcionalidades desenvolvidas durante o microfundamento Desenvolvimento Web Backend (Entrega referente etapa 2):
 
 ### Aluna Isabella
 
@@ -18,16 +14,62 @@ https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e3-proj-back-t1-time-
 
 ### Aluna Elisabete
 
-Acompanhando o microfundamento, o desenvolvimento da aplicação Web, Veículos, utilizando ASP.NET.Core MVC ocorreu Erro de compilação  na criação da camada View, mas depois foi encontrado um Erro de Sintaxe, que sendo corrigido, permitiu a criação da View. O restante das operções e configurações ocorreram conforme o professor Kleber ensinou.
+Acompanhando o microfundamento, o desenvolvimento da aplicação Web, Veículos, utilizando ASP.NET.Core MVC ocorreu Erro de compilação na criação da camada View, mas depois foi encontrado um Erro de Sintaxe, que sendo corrigido, permitiu a criação da View. O restante das operções e configurações ocorreram conforme o professor Kleber ensinou.
 
-Para cada requisito funcional, pode ser entregue um artefato desse tipo
+## Detalhamento das funcionalidades focadas em back-end desenvolvidas durante a Etapa 3 do Projeto - Páginas desenvolvidas por cada integrante
 
-> **Links Úteis**:
->
-> - [Trabalhando com HTML5 Local Storage e JSON](https://www.devmedia.com.br/trabalhando-com-html5-local-storage-e-json/29045)
-> - [JSON Tutorial](https://www.w3resource.com/JSON)
-> - [JSON Data Set Sample](https://opensource.adobe.com/Spry/samples/data_region/JSONDataSetSample.html)
-> - [JSON - Introduction (W3Schools)](https://www.w3schools.com/js/js_json_intro.asp)
-> - [JSON Tutorial (TutorialsPoint)](https://www.tutorialspoint.com/json/index.htm)
+## Instruções para criação do primeiro usuário para uso
 
+Para que seja possível visualizar as funcionalidades do sistema, é necessário estar logado, seja como Admin ou User padrão.
 
+Entretanto, apenas usuários Admin podem criar novos usuários. Para resolver tal paradoxo, foi habilitada a seguinte rota para criação de usuários iniciais de forma anônima:
+
+_/Usuarios/Create_
+
+<img width="300px" src="img/cadastro-usuario.png">
+
+### Aluno Danilo
+
+Foi responsável pelo desenvolvimento da página inicial. Nesta página, além de conter o logo criado para a aplicação, de forma a apresenta-la ao usuário, existe uma funcionalidade de exibição de mensagens motivacionais referentes a persistência na academia.
+
+Estas mensagens são resgatadas de forma aleatória no banco de dados da aplicação e exibidas para todos os tipos de perfil de usuário e também para usuários não logados (anônimos).
+
+Usuários Administradores tem acesso a 2 botões logo abaixo das mensagens, 1 para criar novas mensagens e outro para editar mensagens existentes.
+
+Caso não haja nenhuma mensagem cadastrada, o sistema mostra uma mensagem explicativa sobre o funcionamento neste espaço.
+
+<img width="300px" src="img/visualizacao-user.png">
+
+_Visualização User padrão ou usuário anônimo_
+
+<img width="400px" src="img/home-page-sem-mensagens.png">
+
+_Visualização Admin sem mensagens cadastradas_
+
+Ao clicar no botão "Edite as Mensagens" o usuário Administrador pode verificar uma lista com as mensagens cadastradas, podendo visualiza-las, edita-las ou excluí-las do banco de dados.
+
+<img width="600px" src="img/edicao-mensagens-home.png">
+
+## Aplicação dos Padrões de Projeto
+
+A aplicação ShapeApp utiliza o padrão de desenvolvimento MVC, que por si só aplica em sua lógica de funcionalidades padrões Grasp.
+
+Analisando a distribuição de responsabilidades entre as classes, podemos observar que o padrão **Criador** é aplicado sempre que um novo cadastro no banco de dados é efetuado através das telas de CRUD do sistema. Isso porque é através das telas existentes nas **Views** que o usuário pode interagir, mas é nas classes **Controladoras** que a ação é de fato efetivada, pois é nelas que já se contém **as informações necessárias para a ação**, que foram resgatadas do banco de dados por meio das classes de **Models**.
+
+Ainda citando o exemplo do funcionamento do MVC, podemos relacionar ao padrão Grasp **High Cohesion** ou _Alta Coesão_. Isso porque as responsabilidades de cada classe são bem definidas. Além da separação entre camadas de modelo, visualização e controladores, dentro de cada uma destas pastas, as classes existentes ficam responsáveis por apenas 1 única responsabilidade da aplicação. Por exemplo, no caso do ShapeApp, a classe controladora _"UsuáriosController.cs"_ é responsável apenas pelo gerenciamento de usuários, não tendo outras responsabilidades, inclusive as funcionalidades de **Perfil** tem sua própria classe controladora.
+
+<br>
+<br>
+
+<img width="200px" src="img/views.png">
+<img width="300px" src="img/controladores.png">
+<img width="200px" src="img/models.png">
+
+<br>
+<br>
+
+Além dos padrões Grasp citados acima, toda a programação do código fonte segue o padrão de identação praticado no mercado conforme o exemplo abaixo:
+<br>
+<br>
+
+<img width="600px" src="img/identação.png">
