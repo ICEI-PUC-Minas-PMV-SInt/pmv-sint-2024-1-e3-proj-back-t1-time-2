@@ -5,7 +5,7 @@ using ShapeApp.Models;
 
 namespace ShapeApp.Controllers
 {
-    [Authorize]
+    [Authorize(Roles="Admin")]
     public class ExerciciosController : Controller
     {
        private readonly AppDbContext _context;
