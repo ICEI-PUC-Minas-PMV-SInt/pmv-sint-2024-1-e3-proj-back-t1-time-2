@@ -122,7 +122,7 @@ namespace ShapeApp.Controllers
             }
 
             var perfilShape = await _context.PerfilShape
-                .FirstOrDefaultAsync(m => m.IdPerfil == id);
+                .FirstOrDefaultAsync(m => m.UsuarioId == id);
 
             if (perfilShape == null)
             {
