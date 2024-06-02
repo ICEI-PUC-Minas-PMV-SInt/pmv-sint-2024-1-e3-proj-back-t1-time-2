@@ -84,17 +84,16 @@ Responsável pelo desenvolvimento das páginas **Exercícios** e **Meus treinos*
 
 ### Aluna Elisabete
 
-Responsável pela Tela de Login. Usuários comuns e administradores são autenticados para acessar as páginas. porém somente usuários Admin tem acesso à todas as páginas incluindo Usuário e Exercícios. No Crud Usuários tem os botões Editar, Visualizar e Apagar com suas funcionalidades.
+Responsável pela Tela de Login. Usuários comuns e administradores são autenticados para acessar as páginas. porém somente usuários Admin tem acesso à todas as páginas incluindo Usuários e Exercícios. No Crud Usuários tem os botões Editar, Visualizar e Apagar com suas funcionalidades.
 
 <img width="600px" src="img/Tela Login.png">
 
-<img width="600px" src="img/Tela usuário.png">
+<img width="600px" src="img/Tela usuário 1.png
 
 <img width="600px" src="img/Tela Administrador.png">
 
 <img width="600px" src="img/Crud Usuários.png">
 
-<img width="600px" src="img/Details Usuário.png">
 
 ### Aluna Alicia
 
