@@ -96,9 +96,37 @@ Responsável pela Tela de Login. Usuários comuns e administradores são autenti
 
 <img width="600px" src="img/Details Usuário.png">
 
+### Aluna Alicia
 
+Foi responsável pelo desenvolvimento da página de CRUD de usuários e atualização perfil.
 
+Apenas os usuários Admin tem acesso ao CRUD de usuários, sendo possivel criar um novo, visualizá-los, atualizar e remover.
 
+Apenas usuários logados tem acesso a atualização de perfil.
+
+- Tela 1 - Criação de usuários
+
+<img width="210px" height="300px" src="img/cadastro-usuario.png">
+
+- Tela 2 - Visualização de usuários
+
+<img width="600px" height="150px" src="img/visualizacao-usuarios.png">
+
+- Tela 3 - Detalhes do usuário
+
+<img width="200px" height="190px" src="img/detalhes-usuario.png">
+
+- Tela 4 - Atualização de usuários
+
+<img width="225px" height="300px" src="img/atualizacao-usuario.png">
+
+- Tela 5 - Remoção de usuários
+
+<img width="300px" height="210px" src="img/remocao-usuario.png">
+
+- Tela 6 - Atualização de perfil
+
+<img width="600px" height="260" src="img/atualizacao-perfil.png">
 
 
 
