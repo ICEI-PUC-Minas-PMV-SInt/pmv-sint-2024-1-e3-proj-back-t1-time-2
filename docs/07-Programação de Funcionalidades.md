@@ -88,7 +88,7 @@ Responsável pela Tela de Login. Usuários comuns e administradores são autenti
 
 <img width="600px" src="img/Tela Login.png">
 
-<img width="600px" src="img/Tela usuário 1.png
+<img width="600px" src="img/Tela usuário 1.png">
 
 <img width="600px" src="img/Tela Administrador.png">
 
