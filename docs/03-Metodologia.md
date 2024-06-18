@@ -144,6 +144,8 @@ O ASP.NET Core MVC é uma estrutura de software livre, de multiplataforma e alto
 - **Flexibilidade**: O framework oferece maior controle sobre o fluxo de dados e a lógica da aplicação, sendo mais flexível para criar aplicativos da WEB simples ou complexos, conforme a necessidade do desenvolvedor.
 - **Integração com bibliotecas JavaScript**: permite a integração com bibliotecas JavaScript para melhorar a experiência do usuário.
 - **HTML gerado separadamente**: O HTML enviado para o navegador é gerado por um mecanismo separado e substituível facilitando a personalização e a otimização da renderização da página.
+- **ASP.NET Core Identity**: API que suporta a funcionalidade de logon da interface do usuário. Gerencia usuários, senhas, dados de perfil, funções, declarações, tokens, confirmações por email, entre outros. Oferece funcionalidades de autenticação, normalmente é configurado usando o banco de dados do SQL Server, mas permite outro armazenamento persistente, como o armazenamento de tabelas no Azure.
+- **Entity Framework**: ferramenta que permite a interação com o banco de dados facilitando o desenvolvimento, uma vez que permite o trabalho com objetos e consultas LINQ (consulta integrada a linguagem) em vez de escrever SQL manualmente. Mapeia as classes para as tabelas, cria e atualiza o esquema de banco de dados de forma  automática. 
   
  Embora o ASP.NET Core MVC seja uma estrutura poderosa, está framework apresenta algumas desvantagens como:
 
