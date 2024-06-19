@@ -11,11 +11,9 @@ Este grupo esta desenvolvendo um aplicativo denominado `Shape App`. Este aplicat
 ## Integrantes
 
 * Alicia Ribeiro Andrade da Silva
-* Cheyenne Natane Fontes de Souza
 * Danilo Henrique Pupin de Carvalho
 * Elisabete Romana dos Santos de Paula
 * Isabella Cristina da Silva Prado
-* Juliano Cesar Santos Cruz
 
 ## Orientador
 

@@ -180,19 +180,42 @@ Entregar um arquivo banco.sql contendo os scripts de criação das tabelas do ba
 
 Entregar um arquivo dml.sql contendo os scripts de manipulação de banco de dados. Este arquivo deverá ser incluído dentro da pasta src\bd.
 
-## Tecnologias Utilizadas
-
-Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
-
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
-
 ## Hospedagem
 
-Explique como a hospedagem e o lançamento da plataforma foi feita.
+Tanto o banco de dados quanto a implantação dos códigos da aplicação, foram feitos no Microsoft Azure.
 
-> **Links Úteis**:
->
-> - [Website com GitHub Pages](https://pages.github.com/)
-> - [Programação colaborativa com Repl.it](https://repl.it/)
-> - [Getting Started with Heroku](https://devcenter.heroku.com/start)
-> - [Publicando Seu Site No Heroku](http://pythonclub.com.br/publicando-seu-hello-world-no-heroku.html)
+### Criação do banco de dados no Azure
+
+O primeiro passo foi criar uma conta gratuita no Azure.
+
+O banco de dados foi criado conforme a documentação da Microsoft.
+
+> - [Documentação para criar o banco](https://learn.microsoft.com/en-us/azure/azure-sql/database/single-database-create-quickstart?view=azuresql&tabs=azure-portal)
+
+Opção de implantação: Azure SQL Database(250 GB).
+
+### Implantação da aplicação no Azure
+
+Primeiro foi crida uma máquina virtual Linux.
+
+> - [Documentação para criar uma máquina virtual](https://learn.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal)
+
+Para rodar a aplicação usamos o Nginx (atua como proxy reverse – recebe as solicitações de conexão e gerencia o que será preciso requisitar no servidor principal ou verificar se a solicitação está disponível em cache). 
+
+A instalação e configuração do Nginx foram feitas conforme a documentação da Microsoft.
+
+> - [Documentação Linux com Nginx](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx?view=aspnetcore-8.0&tabs=linux-ubuntu)
+
+A aplicação foi publicada com as seguintes configurações:
+- Configuration: Release
+- Target Framework: net8.0
+- Deployment Mode: Self-contained
+- Target Runtime: Linux-x64
+  
+Após publicar em uma pasta local, os arquivos foram copiados para o servidor usando o comando scp (ssh).
+
+A aplicação inicializa automaticamente junto com o Linux conforme a documentação da Microsoft (usando systemd).
+
+<img src="img/CreateService.png" width="600"/>
+
+
