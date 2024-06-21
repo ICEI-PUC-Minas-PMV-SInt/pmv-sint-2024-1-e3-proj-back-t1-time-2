@@ -1,182 +1,115 @@
-# Plano de Testes do Backend
+# Plano de Testes do Back-end
 
-### Estrutura do Documento
+### 1- Introdução
 
-Este plano de testes está organizado da seguinte forma:
-1. Introdução
-2. Objetivo
-3. Metodologia de Teste
-4. Cronograma de Teste
-5. Responsabilidades
-6. Riscos e Considerações
-7. Casos de Teste
+**Objetivo**
 
-## Introdução
+O objetivo deste plano de testes é garantir a qualidade e a funcionalidade do back-end do Shape App. O back-end é responsável por fornecer listas de exercícios personalizadas, gerenciar e registrar o progresso dos usuários. 
 
-Este documento descreve o plano de testes para o backend do sistema Shape, um aplicativo de treinamento físico personalizado. O objetivo deste plano é garantir que o backend do sistema atenda aos requisitos funcionais e não funcionais, bem como validar sua funcionalidade, desempenho, segurança e confiabilidade.
+**Escopo**
 
-### Objetivo
+O escopo deste plano de testes inclui testes unitários, testes de integração, testes de carga e desempenho, e testes de segurança das funcionalidades do back-end do Shape App. 
 
-O objetivo dos testes do backend é verificar a correta implementação das funcionalidades do sistema, garantir que o sistema esteja operando de acordo com as especificações e identificar e corrigir quaisquer problemas ou falhas que possam surgir durante o teste.
+### 2- Objetivos do Teste
 
-## Metodologia de Teste
+- Verificar a corretude das funcionalidades do back-end. 
 
-### Abordagem Geral:
+- Garantir a integração adequada entre os diferentes módulos do back-end. 
 
-Para os testes do backend do sistema Shape, adotaremos as seguintes abordagens:
-  
-- **Teste de Desempenho:** Avaliaremos o desempenho do sistema sob diferentes cargas de trabalho para garantir que ele seja escalável e responsivo.
-  
-- **Teste de Segurança:** Realizaremos testes de segurança para identificar e corrigir vulnerabilidades que possam comprometer a integridade dos dados do usuário.
+- Avaliar a capacidade do sistema de lidar com cargas elevadas e manter um desempenho aceitável. 
 
-### Ferramentas e Tecnologias:
+- Testar a segurança do back-end para proteger os dados dos usuários. 
 
-Para realizar os testes, utilizaremos as seguintes ferramentas e tecnologias:
+### 3- Escopo do Teste
 
-- **Postman:** Faremos uso do Postman para automatizar os testes de API e verificar a integração entre os diferentes serviços do backend.
-  
-- **JMeter:** Utilizaremos o Apache JMeter para realizar testes de carga e avaliar o desempenho do sistema sob diferentes condições de carga.
+**Funcionalidades Incluídas:**
+- Gerenciamento de perfil do usuário. 
+- Geração de listas de exercícios personalizadas. 
+- Registro e acompanhamento de progresso do usuário.
 
-Esta metodologia nos permitirá abordar de maneira abrangente os testes do backend do sistema Shape, garantindo sua qualidade, desempenho e segurança.
+### 4- Abordagem de Teste 
 
-# Cronograma de Teste
+- **Testes Unitários**: Verificar a corretude das unidades individuais de código (funções, métodos, classes). 
+- **Testes de Integração**: Testar a integração entre diferentes módulos do sistema. 
+- **Testes de Carga e Desempenho**: Avaliar o desempenho do sistema sob diferentes condições de cargas. 
+- **Testes de Segurança**: Verificar a proteção contra vulnerabilidades comuns.  
+- Verificação da conformidade com os padrões de segurança e regulamentações aplicáveis. 
 
-O cronograma de teste do backend do sistema Shape será dividido em várias fases, cada uma dedicada a um conjunto específico de testes. A seguir está o cronograma proposto:
+### 5- Ambiente de Teste 
 
-## Fase 1: Preparação
+- **Hardware**: Servidores de teste com configurações similares ao ambiente de produção. 
+Para realizar os testes, utilizaremos as seguintes ferramentas e tecnologias: 
+- **Postman**: Faremos uso do Postman para automatizar os testes de API e verificar a integração entre os diferentes serviços do backend. 
+- **JMeter**: Utilizaremos o Apache JMeter para realizar testes de carga e avaliar o desempenho do sistema sob diferentes condições de carga. 
 
-- **Atividades:**
-  - Configuração do ambiente de teste.
-  - Preparação dos dados de teste.
-  - Revisão dos casos de teste e documentação.
-  - Treinamento da equipe de teste.
+### 6- Critérios de Entrada e Saída
 
-## Fase 2: Testes de Desempenho
+- **Critérios de Entrada**: 
+  - Código back-end completo e revisado.
+  - Ambiente de teste configurado e disponível. 
 
-- **Atividades:**
-  - Execução de testes de carga para avaliar o desempenho do sistema sob diferentes condições de carga.
-  - Identificação de gargalos de desempenho e otimização do código, se necessário.
+- **Critérios de Saída**: 
+  - Todos os casos de teste executados com sucesso ou documentados. 
+  - Relatório de bugs gerado e analisado.  
+  - Feedback dos desenvolvedores coletado e avaliado. 
 
-## Fase 3: Testes de Segurança
+### 7- Entregas de Teste
 
-- **Atividades:**
-  - Realização de testes de segurança para identificar e corrigir vulnerabilidades no sistema.
-  - Verificação da conformidade com os padrões de segurança e regulamentações aplicáveis.
+- Relatórios de bugs. 
+- Métricas de desempenho. 
+- Feedback dos desenvolvedores. 
+- Relatório final de teste. 
 
-## Fase 4: Revisão e Relatório
+### 8- Recursos e Cronograma 
 
-- **Atividades:**
-  - Revisão dos resultados dos testes e documentação.
-  - Preparação do relatório final de testes, incluindo resumo dos resultados, problemas encontrados e recomendações para melhorias.
+- **Equipe:** 3 desenvolvedores de testes, 1 líder de teste. 
+- **Cronograma:** 3 semanas de testes. 
 
-## Responsabilidades
+### 9- Riscos e Mitigações  
 
-As responsabilidades no plano de testes do backend do sistema Shape são distribuídas da seguinte forma:
+- **Riscos:** Atrasos devido a bugs críticos. 
+- **Mitigações:** Realizar testes de regressão antecipados e planejar tempo extra no cronograma para correção de bugs. 
 
-1. **Equipe de Desenvolvimento:**
-   - Responsável por desenvolver o código do backend de acordo com os requisitos especificados.
-   - Deve garantir que o código seja testável e fornecer suporte à equipe de teste durante os testes.
+### Roteiro de Testes de Funcionalidades do Back-End  
 
-2. **Equipe de Teste:**
-   - Responsável por planejar, executar e relatar os testes do backend.
-   - Deve desenvolver casos de teste abrangentes que abordem todos os requisitos funcionais e não funcionais.
-   - Realiza testes de unidade, integração, desempenho e segurança para garantir a qualidade do sistema.
-   - Identifica e documenta problemas encontrados durante os testes e colabora com a equipe de desenvolvimento para resolvê-los.
+#### Caso de teste 01 
+- **1. Permitir que os usuários se cadastrem na aplicação**
+  - **Objetivo**: Garantir o registro bem-sucedido de um novo usuário. 
+  - **Localização/Passos**:  
+  - **Tela** Cadastro de usuário>Tela inicial>Tela Perfil 
+  - **Resultado Esperado**: Cadastro bem-sucedido e configuração de seu perfil inicial sem problemas. 
 
-3. **Usuários do Sistema:**
-   - Responsáveis por fornecer feedback sobre a usabilidade e a funcionalidade do sistema durante os testes de aceitação.
-   - Deve testar o sistema em um ambiente de produção simulado e relatar quaisquer problemas ou preocupações à equipe de desenvolvimento e teste.
+- **2. Permitir que os usuários atualizem seus perfis**
+  - **Objetivo**: Testar a criação, atualização e exclusão de perfis de usuário. 
+  - **Localização/Passos**: 
+  - **Tela** Perfil > Atualizar perfil> Visualizar perfil> Excluir perfil
+  - **Resultado Esperado:** Operações de criação, atualização e exclusão realizadas com sucesso. 
 
-# Riscos e Considerações
+#### Caso de teste 02
+- **3. Permitir que os usuários personalizem suas próprias rotinas de treinamentos**
+  - **Objetivo**: Verificar a integração entre o módulo de perfil do usuário e o módulo de geração de exercícios. 
+  - **Localização/Passos**: 
+  - **Tela** Perfil com objetivo definido> Tela Lista de Exercícios> Verificar se a lista é adequada ao perfil criado 
+  - **Resultado Esperado:** Lista de exercícios gerada corretamente de acordo com o perfil do usuário. 
 
-Ao planejar os testes do backend do sistema Shape, é importante considerar os seguintes riscos e considerações:
+#### Teste de Carga e Desempenho
+- **4. A aplicação deve ser responsiva e responder às ações do usuário em no máximo 2s**
+  - **Objetivo**: Avaliar o desempenho do sistema sob diferentes cargas. 
+  - **Localização/Passos**: 
+  - Navegação das telas> Monitorar tempo de resposta e uso de recursos
+- **Resultado Esperado:** O sistema deve manter um desempenho aceitável (tempo de resposta inferior a 2 segundos)
+- **A aplicação deve ser capaz de lidar com um aumento no número de usuários e no volume de dados sem comprometer o desempenho**
+  - **Objetivo:** Avaliar a capacidade do sistema de lidar com picos de tráfego. 
+  - **Localização/Passos:** 
+  - Simular aumento súbito de tráfego> Monitorar estabilidade e tempo de resposta. 
+  - **Resultado Esperado:** O sistema deve permanecer estável e responder adequadamente sob picos de tráfego.  
 
-1. **Dependência de Terceiros:**
-   - Risco: Dependência de serviços externos ou APIs de terceiros pode resultar em falhas de integração ou disponibilidade.
-   - Considerações: Testar a integração com serviços de terceiros em ambientes controlados e garantir um plano de contingência para lidar com falhas ou interrupções.
-
-2. **Escalabilidade:**
-   - Risco: O sistema pode não escalar conforme o esperado para lidar com um aumento repentino no número de usuários.
-   - Considerações: Realizar testes de carga para avaliar o desempenho do sistema sob diferentes volumes de tráfego e garantir que ele seja escalável conforme necessário.
-
-3. **Segurança:**
-   - Risco: Vulnerabilidades de segurança no código ou nas configurações do servidor podem comprometer a integridade dos dados do usuário.
-   - Considerações: Realizar testes de segurança para identificar e corrigir vulnerabilidades, além de garantir a conformidade com regulamentos de proteção de dados, como LGPD.
-
-4. **Compatibilidade de Plataforma:**
-   - Risco: O sistema pode não funcionar corretamente em todas as plataformas ou dispositivos, levando a uma experiência do usuário inconsistente.
-   - Considerações: Testar o sistema em diferentes plataformas, navegadores e dispositivos para garantir compatibilidade e consistência.
-
-5. **Manutenibilidade:**
-   - Risco: Falta de manutenibilidade do código pode dificultar a identificação e correção de problemas no futuro.
-   - Considerações: Escrever testes unitários abrangentes e seguir boas práticas de desenvolvimento de software para garantir a manutenibilidade do código.
-
-# Casos de Testes
-
-### Casos de Teste para RF-001: Permitir que os usuários se cadastrem na aplicação
-
-#### Caso de Teste 1: Registro bem-sucedido de um novo usuário
-- **Dado que** o usuário acessa a página de registro
-- **Quando** ele preenche todos os campos obrigatórios do formulário de registro com informações válidas
-- **E** clica no botão de registro
-- **Então** ele deve ser redirecionado para a página inicial
-
-#### Caso de Teste 2: Registro com campos em branco
-- **Dado que** o usuário acessa a página de registro
-- **Quando** ele deixa um ou mais campos obrigatórios em branco no formulário de registro
-- **E** clica no botão de registro
-- **Então** a aplicação deve exibir uma mensagem de erro indicando que os campos obrigatórios não podem estar em branco
-
-### Casos de Teste para RF-002: Permitir que os usuários atualizem seus perfis
-
-#### Caso de Teste 1: Atualização bem-sucedida do perfil do usuário
-- **Dado que** o usuário acessa a página de perfil
-- **Quando** ele edita as informações do perfil com novos dados
-- **E** clica no botão de atualizar perfil
-- **Então** as informações do perfil devem ser atualizadas corretamente
-
-### Casos de Teste para RF-003: Permitir que os usuários personalizem suas próprias rotinas de treinamento
-
-#### Caso de Teste 1: Criação bem-sucedida de uma rotina personalizada
-- **Dado que** o usuário acessa a página de criação de rotina
-- **Quando** ele seleciona exercícios específicos e ajusta a intensidade de acordo com suas preferências
-- **E** salva a rotina
-- **Então** a aplicação deve salvar a rotina personalizada com sucesso e torná-la disponível para o usuário
-
-### Casos de Teste para RNF-001: A aplicação deve ser responsiva e responder às ações do usuário em no máximo 2s
-
-#### Caso de Teste 1: Responsividade da aplicação durante a navegação
-- **Dado que** o usuário acessa diferentes páginas da aplicação
-- **Quando** ele realiza ações como clicar em botões, preencher formulários ou navegar entre telas
-- **Então** a aplicação deve responder às ações do usuário em no máximo 2 segundos
-
-### Casos de Teste para RNF-002: A aplicação deve estar disponível online 99% do tempo
-
-#### Caso de Teste 1: Disponibilidade da aplicação durante o horário de pico
-- **Dado que** é um horário de pico de acesso à aplicação
-- **Quando** múltiplos usuários tentam acessar a aplicação simultaneamente
-- **Então** a aplicação deve estar disponível online para acesso de pelo menos 99% dos usuários durante esse período
-
-### Casos de Teste para RNF-003: A aplicação deve estar em conformidade com os regulamentos de privacidade de dados, como a LGPD
-
-#### Caso de Teste 1: Conformidade com a LGPD durante o armazenamento de dados do usuário
-- **Dado que** o usuário fornece informações pessoais durante o registro na aplicação
-- **Quando** essas informações são armazenadas no banco de dados da aplicação
-- **Então** a aplicação deve garantir que o armazenamento e uso desses dados estejam em conformidade com as diretrizes da LGPD
-
-### Casos de Teste para RNF-004: A aplicação deve ser facilmente mantida e atualizada, com código limpo e modular
-
-#### Caso de Teste 1: Manutenibilidade do código-fonte
-- **Dado que** um desenvolvedor precisa realizar uma atualização na aplicação
-- **Quando** ele acessa o código-fonte e identifica a parte relevante para a atualização
-- **Então** o código-fonte deve ser organizado, legível e modular, facilitando a realização da atualização
-
-### Casos de Teste para RNF-005: A aplicação deve ser capaz de lidar com um aumento no número de usuários e no volume de dados sem comprometer o desempenho
-
-#### Caso de Teste 1: Escalabilidade da aplicação durante picos de tráfego
-- **Dado que** a aplicação experimenta um aumento repentino no número de usuários
-- **Quando** o tráfego na aplicação aumenta significativamente
-- **Então** a aplicação deve continuar a funcionar normalmente e fornecer uma resposta rápida aos usuários, sem comprometer o desempenho
+#### Teste de Segurança e Privacidade 
+- **5. A aplicação deve estar em conformidade com os regulamentos de privacidade de dados, com a LGPD**
+  - **Objetivo:** Estar em conformidade com a LGPD durante o armazenamento de dados do usuário. 
+  - **Localização/Passos:** 
+  - Dados fornecidos durante o registro> Armazenamento seguro em conformidade com as diretrizes LGPD. 
+  - **Resultado Esperado:** Dados armazenados com segurança. 
  
 ## Ferramentas de Testes (Opcional)
 
