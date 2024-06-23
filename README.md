@@ -21,7 +21,7 @@ Este grupo esta desenvolvendo um aplicativo denominado `Shape App`. Este aplicat
 
 ## Instruções de utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+Para acessar a aplicação é necessário entrar com o endereço de IP: **20.185.249.218** referente ao  local onde a aplicação está hospedada .Depois de acessar é preciso fazer um cadastro utilizando a seguinte rota **_/Usuarios/Create_**, depois é só fazer o login com o Id do usuário e senha. Pronto! O usuário já pode acessar as ferramentas disponíveis na aplicação. 
 
 # Documentação
 
